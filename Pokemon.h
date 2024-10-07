@@ -21,12 +21,14 @@ class Pokemon {
  public:
   Pokemon();
   Pokemon(string n, Type t, int h, int lv);
-  int takeDamage();
-  int heal();
+  int takeDamage(int damage);
+  int heal(int amount);
   int levelUp();
 
   string get_name();
   void set_name(string name);
+  Type get_type();
+  void set_type(Type newType);
   int get_health();
   void set_health(int health);
   int get_level();
