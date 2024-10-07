@@ -107,3 +107,10 @@ float typeEffectiveness[NUM_TYPES][NUM_TYPES] = {
     /* FAIRY */
     {1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0,
      2.0, 0.5, 1.0}};
+
+Type::Type() {}
+Type::Type(TypeName t) : typeName(t) {}
+float Type::getEffectiveness(Type& opponentType) {
+  return typeEffectiveness[typeName][opponentType.typeName];
+}
+string Type::getName() { return typeToString(typeName); }

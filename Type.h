@@ -31,9 +31,13 @@ enum TypeName {
 
 class Type {
  private:
-  string name;
+  TypeName typeName;
 
  public:
+  Type();
+  Type(TypeName t);
+  float getEffectiveness(Type& opponentType);
+  string getName();
 };
 
 #endif
