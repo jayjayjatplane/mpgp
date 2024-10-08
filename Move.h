@@ -5,25 +5,25 @@
 
 #include "Type.h"
 
-using namespace std;
-
 class Move {
  protected:
-  string mName;
+  std::string mName;
   Type moveType;
-  int damageFactor;
+  int damageFactor;  // Base damage of the move
 
  public:
+  // Constructors
   Move();
-  Move(string n, int d, Type& t);
+  Move(std::string n, int d, Type& t);
 
-  string getName();
+  // Getters
+  std::string getName();
   int getDamageFactor();
   Type getMoveType();
 
-  int attackDamage(int multiplier = 1);
-
-  void applyDamage(int& pokemonHealth, Type& pokemonType, int multiplier = 1);
+  // Methods for calculating and applying damage
+  int calculateDamage(Type& targetType);
+  void applyDamage(int& pokemonHealth, Type pokemonType);
 };
 
 #endif

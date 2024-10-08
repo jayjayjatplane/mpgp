@@ -1,28 +1,19 @@
 #include "Move.h"
 
-#include <string>
+Move::Move() : mName(""), damageFactor(0) {}
+Move::Move(std::string n, int d, Type& t)
+    : mName(n), damageFactor(d), moveType(t) {}
 
-#include "Type.h"
-
-using namespace std;
-
-Move::Move() : mName("Unknown"), damageFactor(0), moveType(Type()) {}
-
-Move::Move(string n, int d, Type& t) : mName(n), damageFactor(d), moveType(t) {}
-
-string Move::getName() { return mName; }
-
+std::string Move::getName() { return mName; }
 int Move::getDamageFactor() { return damageFactor; }
-
 Type Move::getMoveType() { return moveType; }
 
-int Move::attackDamage(int multiplier) { return damageFactor * multiplier; }
+int Move::calculateDamage(Type& targetType) {
+  // Calculate damage based on type effectiveness
+  return damageFactor * targetType.getEffectiveness(moveType);
+}
 
-void Move::applyDamage(int& pokemonHealth, Type& pokemonType, int multiplier) {
-  float effectiveness = moveType.getEffectiveness(
-      pokemonType);  // Get effectiveness based on target's type
-  int damage = attackDamage(multiplier) * effectiveness;
+void Move::applyDamage(int& pokemonHealth, Type pokemonType) {
+  int damage = calculateDamage(pokemonType);
   pokemonHealth -= damage;
-  if (pokemonHealth < 0)
-    pokemonHealth = 0;  // Ensure health doesn't go below zero
 }
