@@ -32,6 +32,11 @@ int Pokemon::levelUp() {
   return level;
 }
 
+// Moveset
+void Pokemon::addMove(Move* move) { moveSet.addMove(move); }
+
+void Pokemon::displayMoves() { moveSet.displayMoves(); }
+
 // Getters and Setters
 string Pokemon::get_name() { return name; }
 void Pokemon::set_name(string name) { this->name = name; }

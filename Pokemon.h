@@ -3,6 +3,7 @@
 
 #include <string>
 
+#include "MoveSet.h"
 #include "Type.h"
 
 class Pokemon {
@@ -11,7 +12,8 @@ class Pokemon {
   Type type;
   int health;
   int level;
-  int number;  // Added if needed for identification
+  int number;       // Added if needed for identification
+  MoveSet moveSet;  // Member to hold the MoveSet
 
  public:
   // Constructors
@@ -22,6 +24,10 @@ class Pokemon {
   int takeDamage(int damage);
   int heal(int amount);
   int levelUp();
+
+  // moveset
+  void addMove(Move* move);  // Method to add move to MoveSet
+  void displayMoves();       // Method to display moves
 
   // Getters and Setters
   std::string get_name();
