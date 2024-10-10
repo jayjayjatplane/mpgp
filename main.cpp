@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
 
+#include "Pokedex.h"
+
 using namespace std;
+
+// Adding the First 100 Pokemon into the Pokedex
 
 void displayPokemonList() {
   // to do: implement displaying Pokemon list
@@ -141,6 +145,11 @@ void gameMenu() {
 }
 
 int main() {
+  Pokedex pokedex_hundred(100);
+  PokemonParty party();
+
+  cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+          "\n\n\n\n\n";
   string name = "";
   cout << "WELCOME TO JOSHYMON!" << endl;
   cout << "In this terminal-based Pokemon battle game, you embark on a journey "
