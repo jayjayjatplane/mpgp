@@ -31,17 +31,51 @@ void displayPokemonList() {
 }
 
 void addPokemon() {
+  /* \
+  if (pokemonNum >= 6) {
+    cout << "Party is full. Please remove a pokemon and try again." << endl;
+  }
+  */
   string pokemonName;
   cout << "Enter Pokemon name: ";
   cin >> pokemonName;
-  cout << "Pokemon added: " << pokemonName << endl;
+  /*
+  Add pokemon to party
+  pokemonParty.add(pokemonName);
+  */
+  cout << pokemonName << " has been added to your party.\n" << endl;
+  cout << "Current Pokemon Party: " << endl;
+  string pokemonParty[6];
+  for (int i = 0; i < 6; i++) {
+    pokemonParty[i] = "My Pokemon " + to_string(i + 1);
+  }
+  for (int i = 0; i < 6; i++) {
+    cout << pokemonParty[i] << endl;
+  }
+  cout << "\n";
 }
 
 void removePokemon() {
+  /* if (pokemonNum >= 6) {
+    cout << "Party is empty. Please add a pokemon and try again." << endl;
+  } */
   string pokemonName;
   cout << "Enter Pokemon name: ";
   cin >> pokemonName;
-  cout << "Pokemon removed: " << pokemonName << endl;
+  /*
+  Remove pokemon from party
+  pokemonParty.rem(pokemonName);
+  */
+  cout << pokemonName << " has been removed from your party.\n" << endl;
+  cout << "Current Pokemon Party: " << endl;
+  string pokemonParty[6];
+  for (int i = 0; i < 6; i++) {
+    pokemonParty[i] = "My Pokemon " + to_string(i + 1);
+  }
+  for (int i = 0; i < 6; i++) {
+    cout << pokemonParty[i] << endl;
+  }
+  cout << "\n";
 }
 
 void fightGym() { cout << "You fought a gym and won!" << endl; }
@@ -59,7 +93,9 @@ void pokemonPartyMenu() {
     cout << "Enter your choice: " << endl;
     int party_menu_choice;
     cin >> party_menu_choice;
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            "\n\n\n\n\n"
+         << endl;
 
     if (party_menu_choice == 1) {
       displayPokemonList();
@@ -88,7 +124,9 @@ void gameMenu() {
     cout << "Enter your choice: " << endl;
     int game_menu_choice;
     cin >> game_menu_choice;
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            "\n\n\n\n\n"
+         << endl;
 
     if (game_menu_choice >= 1 && game_menu_choice <= 3) {
       fightGym();
@@ -120,7 +158,9 @@ int main() {
        << endl;
   cout << "Enter Your Name and Click Enter to Start..." << endl;
   cin >> name;
-  cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+  cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+          "\n\n\n\n\n"
+       << endl;
   cout << "Hi Trainer " << name << "! " << endl;
 
   int choice_counter = 0;
@@ -132,21 +172,21 @@ int main() {
     cout << "Enter your choice: " << endl;
     int choice;
     cin >> choice;
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            "\n\n\n\n\n"
+         << endl;
     if (choice == 1) {
       pokemonPartyMenu();
     } else if (choice == 2) {
       gameMenu();
-    }
-    if (choice_counter >= 5) {
-      cout << "Ran Out of Tries. Please Restart." << endl;
-      return 0;
     } else {
       cout << "Please Enter a Valid Choice (1 or 2)";
       choice_counter++;
+      if (choice_counter >= 5) {
+        cout << "Ran Out of Tries. Please Restart." << endl;
+        return 0;
+      }
     }
   }
-
   return 0;
 }
