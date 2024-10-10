@@ -25,7 +25,9 @@ int main() {
        << squirtle.get_health() << endl;
 
   // Use the move on Squirtle
-  ember.applyDamage(squirtle.get_health(), squirtle.get_type());
+  ember.applyDamage(
+      squirtle.get_health(),
+      squirtle.get_type());  // Make sure get_health() returns an lvalue
 
   // Print health after attack
   cout << "Health of " << squirtle.get_name()

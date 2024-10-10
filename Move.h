@@ -6,14 +6,16 @@
 #include "Type.h"
 
 class Move {
- protected:
-  std::string mName;
-  Type moveType;
-  int damageFactor;  // Base damage of the move
+ private:
+  std::string mName;  // Name of the move
+  int damageFactor;   // Damage factor of the move
+  Type moveType;      // Type of the move (e.g., FIRE, WATER)
 
  public:
-  // Constructors
+  // Default constructor
   Move();
+
+  // Parameterized constructor
   Move(std::string n, int d, Type& t);
 
   // Getters
@@ -21,8 +23,10 @@ class Move {
   int getDamageFactor();
   Type getMoveType();
 
-  // Methods for calculating and applying damage
+  // Damage calculation
   int calculateDamage(Type& targetType);
+
+  // Apply damage to a Pokémon
   void applyDamage(int& pokemonHealth, Type pokemonType);
 };
 
