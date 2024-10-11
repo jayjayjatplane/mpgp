@@ -73,15 +73,15 @@ pokemon/run/CMakeFiles/run.dir/main.cpp.o: pokemon/run/CMakeFiles/run.dir/flags.
 pokemon/run/CMakeFiles/run.dir/main.cpp.o: /home/jayjayjatplane/mpgp/pokemon/run/main.cpp
 pokemon/run/CMakeFiles/run.dir/main.cpp.o: pokemon/run/CMakeFiles/run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object pokemon/run/CMakeFiles/run.dir/main.cpp.o"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/run/CMakeFiles/run.dir/main.cpp.o -MF CMakeFiles/run.dir/main.cpp.o.d -o CMakeFiles/run.dir/main.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/main.cpp
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/run/CMakeFiles/run.dir/main.cpp.o -MF CMakeFiles/run.dir/main.cpp.o.d -o CMakeFiles/run.dir/main.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/main.cpp
 
 pokemon/run/CMakeFiles/run.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run.dir/main.cpp.i"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/run/main.cpp > CMakeFiles/run.dir/main.cpp.i
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/run/main.cpp > CMakeFiles/run.dir/main.cpp.i
 
 pokemon/run/CMakeFiles/run.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run.dir/main.cpp.s"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/run/main.cpp -o CMakeFiles/run.dir/main.cpp.s
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/run/main.cpp -o CMakeFiles/run.dir/main.cpp.s
 
 # Object files for target run
 run_OBJECTS = \
