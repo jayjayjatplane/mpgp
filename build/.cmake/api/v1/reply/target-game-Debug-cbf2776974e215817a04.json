@@ -73,8 +73,7 @@
 			[
 				0,
 				1,
-				2,
-				3
+				2
 			]
 		}
 	],
@@ -94,8 +93,7 @@
 			[
 				0,
 				1,
-				2,
-				3
+				2
 			]
 		}
 	],
@@ -117,12 +115,6 @@
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
 			"path" : "pokemon/game/src/PokemonParty.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 3,
-			"compileGroupIndex" : 0,
-			"path" : "pokemon/game/src/Trainer.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

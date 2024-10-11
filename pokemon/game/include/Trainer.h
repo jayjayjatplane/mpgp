@@ -4,32 +4,30 @@
 #include <string>
 
 #include "Pokemon.h"
+#include "PokemonParty.h"
 
 using namespace std;
 
 class Trainer {
  private:
   string name;
+  int party_size;
   Pokemon* party;
-  int partySize;
-  int partyCapacity;
 
  public:
   // Constructor
-  Trainer(const string& name, int initialPartyCapacity = 6);
+  Trainer(string name);
 
   // Getters
-  string getName() const;
-  Pokemon* getParty() const;
-  int getPartySize() const;
+  string get_name();
+  Pokemon* get_party();
 
   // Setters
-  void setName(const string& name);
-  void setParty(Pokemon* party, int partySize);
+  void set_name(string name);
 
   // Other functions
-  void addPokemonToParty(Pokemon* pokemon);
-  void removePokemonFromParty(Pokemon* pokemon);
+  void addPokemonToParty(Pokemon pokemon);
+  void removePokemonFromParty(Pokemon pokemon);
 
   // Destructor
   ~Trainer();

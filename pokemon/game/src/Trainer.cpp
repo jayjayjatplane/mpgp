@@ -1,48 +1,49 @@
 #include "Trainer.h"
 
+#include <cmath>
+#include <iostream>
+
+#include "Pokemon.h"
+#include "PokemonParty.h"
+
 using namespace std;
 
-Trainer::Trainer(const string& name, int initialPartyCapacity) {
-  this->name = name;
-  partySize = 0;
-  partyCapacity = initialPartyCapacity;
-  party = new Pokemon[partyCapacity];
+Trainer::Trainer(string new_name) {
+  name = new_name;
+  party_size = 0;
+  party = new Pokemon[3];
 }
 
-string Trainer::getName() const { return name; }
+string Trainer::get_name() { return name; }
 
-Pokemon* Trainer::getParty() const { return party; }
+Pokemon* Trainer::get_party() { return party; }
 
-int Trainer::getPartySize() const { return partySize; }
+void Trainer::set_name(string new_name) { name = new_name; }
 
-void Trainer::setName(const string& name) { this->name = name; }
-
-void Trainer::setParty(Pokemon* party, int partySize) {
-  this->party = party;
-  this->partySize = partySize;
-}
-
-void Trainer::addPokemonToParty(Pokemon* pokemon) {
-  if (partySize < partyCapacity) {
-    party[partySize] = *pokemon;
-    partySize++;
+void Trainer::addPokemonToParty(Pokemon pokemon) {
+  if (party_size < 3) {
+    party[party_size] = pokemon;
+    party_size++;
   } else {
-    // Handle party full scenario
-    cout << "Party is full!" << endl;
+    cout << "Pokemon party is full!" << endl;
   }
 }
 
-void Trainer::removePokemonFromParty(Pokemon* pokemon) {
-  for (int i = 0; i < partySize; i++) {
-    if (&party[i] == pokemon) {
-      // Shift elements to fill the gap
-      for (int j = i; j < partySize - 1; j++) {
+void Trainer::removePokemonFromParty(Pokemon pokemon) {
+  for (int i = 0; i < party_size; i++) {
+    if (party[i].get_species() == pokemon.get_species() &&
+        party[i].get_type() == pokemon.get_type() &&
+        party[i].get_health() == pokemon.get_health() &&
+        party[i].get_moveset() == pokemon.get_moveset()) {
+      for (int j = i; j < party_size - 1; j++) {
         party[j] = party[j + 1];
       }
-      partySize--;
-      break;
+      party_size--;
+      cout << "Pokemon removed from party!" << endl;
+      return;
     }
   }
+  cout << "Pokemon not found in party!" << endl;
 }
 
 Trainer::~Trainer() { delete[] party; }
