@@ -8,10 +8,31 @@ using namespace std;
 
 // Adding the First 100 Pokemon into the Pokedex
 
-void displayPokemonList(Pokedex pokedex_num) {
+void pokedexMenu(Pokedex pokedex_num) {
   // to do: implement displaying Pokemon list
-  pokedex_num.display_pokedex();
   cout << "\n";
+  while (true) {
+    cout << "POKEDEX MENU:" << endl;
+    cout << "1. Display Pokedex" << endl;
+    cout << "2. Go Back" << endl;
+    cout << "\n";
+    cout << "Enter your choice: " << endl;
+    int pokedex_menu_choice;
+    cin >> pokedex_menu_choice;
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            "\n\n\n\n\n"
+         << endl;
+
+    if (pokedex_menu_choice == 1) {
+      pokedex_num.display_pokedex();
+      cout << "\n";
+    } else if (pokedex_menu_choice == 2) {
+      cout << "\n";
+      break;
+    } else {
+      cout << "Please enter a valid choice.\n" << endl;
+    }
+  }
 }
 
 void addPokemon() {
@@ -66,7 +87,7 @@ void fightGym() { cout << "You fought a gym and won!" << endl; }
 
 void fightChampion() { cout << "You fought the champion and won!" << endl; }
 
-void pokemonPartyMenu() {
+void partyMenu() {
   while (true) {
     cout << "POKEMON PARTY MENU:" << endl;
     cout << "1. Add Pokemon" << endl;
@@ -88,6 +109,8 @@ void pokemonPartyMenu() {
       cout << "\n";
     } else if (party_menu_choice == 3) {
       break;
+    } else {
+      cout << "Please enter a valid choice.\n" << endl;
     }
   }
 }
@@ -116,6 +139,8 @@ void gameMenu() {
       cout << "\n";
     } else if (game_menu_choice == 5) {
       break;
+    } else {
+      cout << "Please enter a valid choice.\n" << endl;
     }
   }
 }
@@ -125,11 +150,11 @@ int main() {
   Pokedex pokedex_thirty(30);
 
   // 1
-  Pokemon Venusaur("Venusaur", "Grass/Poison", 80,
+  Pokemon Venusaur("Venusaur", "Grass", 80,
                    "Solar Beam, Sleep Powder, Razor Leaf, Earthquake");
   pokedex_thirty.add_pokemon_to_pokedex(Venusaur);
   // 2
-  Pokemon Charizard("Charizard", "Fire/Flying", 78,
+  Pokemon Charizard("Charizard", "Fire", 78,
                     "Flamethrower, Dragon Claw, Fire Blast, Fly");
   pokedex_thirty.add_pokemon_to_pokedex(Charizard);
   // 3
@@ -137,15 +162,15 @@ int main() {
                     "Hydro Pump, Skull Bash, Withdraw, Earthquake");
   pokedex_thirty.add_pokemon_to_pokedex(Blastoise);
   // 4
-  Pokemon Butterfree("Butterfree", "Bug/Flying", 60,
+  Pokemon Butterfree("Butterfree", "Bug", 60,
                      "Quiver Dance, Bug Bite, Poison Powder, Aerial Ace");
   pokedex_thirty.add_pokemon_to_pokedex(Butterfree);
   // 5
-  Pokemon Beedrill("Beedrill", "Bug/Poison", 65,
+  Pokemon Beedrill("Beedrill", "Bug", 65,
                    "Twister, Bug Bite, Poison Fang, Agility");
   pokedex_thirty.add_pokemon_to_pokedex(Beedrill);
   // 6
-  Pokemon Pidgeot("Pidgeot", "Normal/Flying", 83,
+  Pokemon Pidgeot("Pidgeot", "Normal", 83,
                   "Quick Attack, Whirlwind, Sand Attack, Aerial Ace");
   pokedex_thirty.add_pokemon_to_pokedex(Pidgeot);
   // 7
@@ -153,7 +178,7 @@ int main() {
                    "Hyper Fang, Quick Attack, Tail Whip, Super Fang");
   pokedex_thirty.add_pokemon_to_pokedex(Raticate);
   // 8
-  Pokemon Fearow("Fearow", "Normal/Flying", 65,
+  Pokemon Fearow("Fearow", "Normal", 65,
                  "Quick Attack, Whirlwind, Sand Attack, Aerial Ace");
   pokedex_thirty.add_pokemon_to_pokedex(Fearow);
   // 9
@@ -169,7 +194,7 @@ int main() {
                     "Earthquake, Sand Attack, Dig, Stone Edge");
   pokedex_thirty.add_pokemon_to_pokedex(Sandslash);
   // 12
-  Pokemon Nidoqueen("Nidoqueen", "Poison/Ground", 90,
+  Pokemon Nidoqueen("Nidoqueen", "Poison", 90,
                     "Earthquake, Poison Fang, Slither, Stone Edge");
   pokedex_thirty.add_pokemon_to_pokedex(Nidoqueen);
   // 13
@@ -181,23 +206,22 @@ int main() {
                     "Fire Blast, Flame Wheel, Fire Spin, Solar Beam");
   pokedex_thirty.add_pokemon_to_pokedex(Ninetales);
   // 15
-  Pokemon Wigglytuff("Wigglytuff", "Normal/Fairy", 70,
-                     "Pound, Growl, Sing, Rest");
+  Pokemon Wigglytuff("Wigglytuff", "Normaly", 70, "Pound, Growl, Sing, Rest");
   pokedex_thirty.add_pokemon_to_pokedex(Wigglytuff);
   // 16
-  Pokemon Golbat("Golbat", "Poison/Flying", 75,
+  Pokemon Golbat("Golbat", "Poison", 75,
                  "Poison Fang, Leech Life, Wing Attack, Aerial Ace");
   pokedex_thirty.add_pokemon_to_pokedex(Golbat);
   // 17
-  Pokemon Vileplume("Vileplume", "Grass/Poison", 75,
+  Pokemon Vileplume("Vileplume", "Grass", 75,
                     "Solar Beam, Sleep Powder, Razor Leaf, Earthquake");
   pokedex_thirty.add_pokemon_to_pokedex(Vileplume);
   // 18
-  Pokemon Parasect("Parasect", "Bug/Grass", 60,
+  Pokemon Parasect("Parasect", "Bug", 60,
                    "Bug Bite, Poison Powder, String Shot, Spore");
   pokedex_thirty.add_pokemon_to_pokedex(Parasect);
   // 19
-  Pokemon Venomoth("Venomoth", "Bug/Poison", 70,
+  Pokemon Venomoth("Venomoth", "Bug", 70,
                    "Poison Fang, Bug Bite, Sludge Bomb, Quiver Dance");
   pokedex_thirty.add_pokemon_to_pokedex(Venomoth);
   // 20
@@ -216,7 +240,7 @@ int main() {
   Pokemon Arcanine("Arcanine", "Fire", 90, "Ember, Bite, Roar, Fire Blast");
   pokedex_thirty.add_pokemon_to_pokedex(Arcanine);
   // 24
-  Pokemon Poliwrath("Poliwrath", "Water/Fighting", 90,
+  Pokemon Poliwrath("Poliwrath", "Water", 90,
                     "Tackle, Bubble, Hypnosis, Water Gun");
   pokedex_thirty.add_pokemon_to_pokedex(Poliwrath);
   // 25
@@ -228,20 +252,19 @@ int main() {
                   "Karate Chop, Pound, Tail Whip, Focus Energy");
   pokedex_thirty.add_pokemon_to_pokedex(Machamp);
   // 27
-  Pokemon Bellsprout("Bellsprout", "Grass/Poison", 40,
+  Pokemon Bellsprout("Bellsprout", "Grass", 40,
                      "Razor Leaf, Vine Whip, Poison Powder, Sleep Powder");
   pokedex_thirty.add_pokemon_to_pokedex(Bellsprout);
   // 28
-  Pokemon Tentacruel("Tentacruel", "Water/Poison", 65,
+  Pokemon Tentacruel("Tentacruel", "Water", 65,
                      "Tackle, Bubble, Hypnosis, Water Gun");
   pokedex_thirty.add_pokemon_to_pokedex(Tentacruel);
   // 29
-  Pokemon Golem("Golem", "Rock/Ground", 90,
+  Pokemon Golem("Golem", "Rock", 90,
                 "Tackle, Rock Blast, Defense Curl, Earthquake");
   pokedex_thirty.add_pokemon_to_pokedex(Golem);
   // 30
-  Pokemon Slowbro("Slowbro", "Water/Psychic", 65,
-                  "Tackle, Yawn, Withdraw, Water Gun");
+  Pokemon Slowbro("Slowbro", "Water", 65, "Tackle, Yawn, Withdraw, Water Gun");
   pokedex_thirty.add_pokemon_to_pokedex(Slowbro);
 
   cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -282,9 +305,9 @@ int main() {
             "\n\n\n\n\n"
          << endl;
     if (choice == 1) {
-      pokedex_thirty.display_pokedex();
+      pokedexMenu(pokedex_thirty);
     } else if (choice == 2) {
-      pokemonPartyMenu();
+      partyMenu();
     } else if (choice == 3) {
       gameMenu();
     } else {
