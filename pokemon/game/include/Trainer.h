@@ -26,8 +26,9 @@ class Trainer {
   void set_name(string name);
 
   // Other functions
-  void addPokemonToParty(Pokemon pokemon);
-  void removePokemonFromParty(Pokemon pokemon);
+  void display_party();
+  void add_pokemon_to_party(Pokemon pokemon);
+  void remove_pokemon_from_party(Pokemon pokemon);
 
   // Destructor
   ~Trainer();

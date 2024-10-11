@@ -212,6 +212,30 @@ src/PokemonParty.cpp.s:
 	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.s
 .PHONY : src/PokemonParty.cpp.s
 
+src/Trainer.o: src/Trainer.cpp.o
+.PHONY : src/Trainer.o
+
+# target to build an object file
+src/Trainer.cpp.o:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o
+.PHONY : src/Trainer.cpp.o
+
+src/Trainer.i: src/Trainer.cpp.i
+.PHONY : src/Trainer.i
+
+# target to preprocess a source file
+src/Trainer.cpp.i:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.i
+.PHONY : src/Trainer.cpp.i
+
+src/Trainer.s: src/Trainer.cpp.s
+.PHONY : src/Trainer.s
+
+# target to generate assembly for a file
+src/Trainer.cpp.s:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.s
+.PHONY : src/Trainer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -231,6 +255,9 @@ help:
 	@echo "... src/PokemonParty.o"
 	@echo "... src/PokemonParty.i"
 	@echo "... src/PokemonParty.s"
+	@echo "... src/Trainer.o"
+	@echo "... src/Trainer.i"
+	@echo "... src/Trainer.s"
 .PHONY : help
 
 

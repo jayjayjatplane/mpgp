@@ -18,6 +18,12 @@
   "output": "pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o"
 },
 {
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/Trainer.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Trainer.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/Trainer.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o"
+},
+{
   "directory": "/home/jayjayjatplane/mpgp/build/pokemon/run",
   "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/run.dir/main.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/main.cpp",
   "file": "/home/jayjayjatplane/mpgp/pokemon/run/main.cpp",

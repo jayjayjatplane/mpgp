@@ -3,6 +3,7 @@
 #include <cmath>
 #include <iostream>
 
+#include "Pokedex.h"
 #include "Pokemon.h"
 #include "PokemonParty.h"
 
@@ -20,7 +21,18 @@ Pokemon* Trainer::get_party() { return party; }
 
 void Trainer::set_name(string new_name) { name = new_name; }
 
-void Trainer::addPokemonToParty(Pokemon pokemon) {
+void Trainer::display_party() {
+  cout << "This Trainer's Pokemon Party:" << endl;
+  for (int i = 0; i < party_size; i++) {
+    cout << "Pokemon " << i + 1 << ":" << endl;
+    cout << " Species: " << party[i].get_species() << " | ";
+    cout << " Type: " << party[i].get_type() << " | ";
+    cout << " Health: " << party[i].get_health() << " | ";
+    cout << "\n";
+  }
+}
+
+void Trainer::add_pokemon_to_party(Pokemon pokemon) {
   if (party_size < 3) {
     party[party_size] = pokemon;
     party_size++;
@@ -29,7 +41,7 @@ void Trainer::addPokemonToParty(Pokemon pokemon) {
   }
 }
 
-void Trainer::removePokemonFromParty(Pokemon pokemon) {
+void Trainer::remove_pokemon_from_party(Pokemon pokemon) {
   for (int i = 0; i < party_size; i++) {
     if (party[i].get_species() == pokemon.get_species() &&
         party[i].get_type() == pokemon.get_type() &&

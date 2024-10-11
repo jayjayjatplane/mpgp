@@ -3,6 +3,7 @@
 
 #include "Pokedex.h"
 #include "PokemonParty.h"
+#include "Trainer.h"
 
 using namespace std;
 
@@ -254,34 +255,49 @@ int main() {
   //
 
   //
-
-  //
-  Pokemon Venusaur2("Venusaur", "Grass", 80,
-                    "Solar Beam, Sleep Powder, Razor Leaf, Earthquake");
-  trainer_party.add_pokemon_to_party(Venusaur);
-  // 2
-  Pokemon Charizard2("Charizard", "Fire", 78,
+  // GYM 1
+  Trainer Chilli("Chilli");
+  Pokemon Charizard1("Charizard", "Fire", 78,
                      "Flamethrower, Dragon Claw, Fire Blast, Fly");
-  trainer_party.add_pokemon_to_party(Charizard);
-  // 3
+  Chilli.add_pokemon_to_party(Charizard1);
+  Pokemon Ninetales1("Ninetales", "Fire", 73,
+                     "Fire Blast, Flame Wheel, Fire Spin, Solar Beam");
+  Chilli.add_pokemon_to_party(Ninetales1);
+  Pokemon Arcanine1("Arcanine", "Fire", 90, "Ember, Bite, Roar, Fire Blast");
+  Chilli.add_pokemon_to_party(Arcanine1);
+  // GYM 2
+  Trainer Soupy("Soupy");
   Pokemon Blastoise2("Blastoise", "Water", 79,
                      "Hydro Pump, Skull Bash, Withdraw, Earthquake");
-  trainer_party.add_pokemon_to_party(Blastoise);
-  // 4
-  Pokemon Butterfree2("Butterfree", "Bug", 60,
-                      "Quiver Dance, Bug Bite, Poison Powder, Aerial Ace");
-  trainer_party.add_pokemon_to_party(Butterfree);
-  // 5
-  Pokemon Beedrill2("Beedrill", "Bug", 65,
-                    "Twister, Bug Bite, Poison Fang, Agility");
-  trainer_party.add_pokemon_to_party(Beedrill);
-  // 6
-  Pokemon Pidgeot2("Pidgeot", "Normal", 83,
-                   "Quick Attack, Whirlwind, Sand Attack, Aerial Ace");
-  trainer_party.add_pokemon_to_party(Pidgeot);
-
-  trainer_party.display_party();
-
+  Soupy.add_pokemon_to_party(Blastoise2);
+  Pokemon Tentacruel2("Tentacruel", "Water", 65,
+                      "Tackle, Bubble, Hypnosis, Water Gun");
+  Soupy.add_pokemon_to_party(Tentacruel2);
+  Pokemon Golduck2("Golduck", "Water", 80,
+                   "Hydro Pump, Skull Bash, Withdraw, Earthquake");
+  Soupy.add_pokemon_to_party(Golduck2);
+  // GYM 3
+  Trainer Herba("Herba");
+  Pokemon Venusaur3("Venusaur", "Grass", 80,
+                    "Solar Beam, Sleep Powder, Razor Leaf, Earthquake");
+  Herba.add_pokemon_to_party(Venusaur3);
+  Pokemon Vileplume3("Vileplume", "Grass", 75,
+                     "Solar Beam, Sleep Powder, Razor Leaf, Earthquake");
+  Herba.add_pokemon_to_party(Vileplume3);
+  Pokemon Bellsprout3("Bellsprout", "Grass", 40,
+                      "Razor Leaf, Vine Whip, Poison Powder, Sleep Powder");
+  Herba.add_pokemon_to_party(Bellsprout3);
+  // CHAMPION
+  Trainer Minestrone("Minestrone");
+  Pokemon Charizard4("Charizard", "Fire", 78,
+                     "Flamethrower, Dragon Claw, Fire Blast, Fly");
+  Minestrone.add_pokemon_to_party(Charizard4);
+  Pokemon Blastoise4("Blastoise", "Water", 79,
+                     "Hydro Pump, Skull Bash, Withdraw, Earthquake");
+  Minestrone.add_pokemon_to_party(Blastoise4);
+  Pokemon Venusaur4("Venusaur", "Grass", 80,
+                    "Solar Beam, Sleep Powder, Razor Leaf, Earthquake");
+  Minestrone.add_pokemon_to_party(Venusaur4);
   //
 
   //
@@ -335,6 +351,16 @@ int main() {
          << endl;
     if (choice == 1) {
       pokedex_thirty.display_pokedex();
+      /*
+      Chilli.display_party();
+      cout << "\n";
+      Soupy.display_party();
+      cout << "\n";
+      Herba.display_party();
+      cout << "\n";
+      Minestrone.display_party();
+      cout << "\n";
+      */
       cout << "Pokedex Displayed.\n\n" << endl;
     } else if (choice == 2) {
       partyMenu();

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.dir/src/Pokemon.cpp.o.d"
   "CMakeFiles/game.dir/src/PokemonParty.cpp.o"
   "CMakeFiles/game.dir/src/PokemonParty.cpp.o.d"
+  "CMakeFiles/game.dir/src/Trainer.cpp.o"
+  "CMakeFiles/game.dir/src/Trainer.cpp.o.d"
   "libgame.a"
   "libgame.pdb"
 )
