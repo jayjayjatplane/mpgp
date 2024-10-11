@@ -18,7 +18,7 @@ void Pokedex::display_pokedex() {
   cout << "This is the Pokedex, which shows the type, health and moveset of "
           "every Pokemon available:"
        << endl;
-  int size = 30;
+  int size = pokemon_party.party_capacity;
   for (int i = 0; i < size; i++) {
     cout << "Pokemon " << i + 1 << ":" << endl;
     cout << " Species: " << party_array[i].get_species() << " | ";
