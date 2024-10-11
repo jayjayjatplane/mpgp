@@ -10,16 +10,35 @@ Pokedex::Pokedex(int capacity) : Pokemon() {
   pokemon_party = PokemonParty(capacity);
 }
 
-void Pokedex::add_pokemon(Pokemon pokemon) {
-  pokemon_party.add_pokemon_to_party(pokemon);
+void Pokedex::display_pokedex() {
+  if (party_array == nullptr) {
+    cout << "Pokedex is empty." << endl;
+    return;
+  }
+  cout << "This is the Pokedex, which shows the type, health and moveset of "
+          "every Pokemon available:"
+       << endl;
+  int size = 30;
+  for (int i = 0; i < size; i++) {
+    cout << "Pokemon " << i + 1 << ":" << endl;
+    cout << " Species: " << party_array[i].get_species() << " | ";
+    cout << " Type: " << party_array[i].get_type() << " | ";
+    cout << " Health: " << party_array[i].get_health() << " | ";
+    cout << " Moveset: " << party_array[i].get_moveset() << endl;
+    cout << "\n";
+  }
+}
+void Pokedex::rem_pokemon_from_pokedex(Pokemon pokemon) {
+  pokemon_party.rem_pokemon_from_party(pokemon);
 }
 
-void Pokedex::display_pokedex() { pokemon_party.display_party(); }
-
-void Pokedex::rem_pokemon_from_party(int index) {
-  pokemon_party.rem_pokemon_from_party(index);
+void Pokedex::add_pokemon_to_pokedex(Pokemon pokemon) {
+  if (party_size < party_capacity) {
+    party_array[party_size] = pokemon;
+    party_size++;
+  } else {
+    cout << "Pokemon party is full!" << endl;
+  }
 }
 
-void Pokedex::add_pokemon_from_party() { pokemon_party.add_pokemon(); }
-
-void Pokedex::display_pokemon_list() { pokemon_party.display_pokemon_list(); }
+Pokedex::~Pokedex() { delete[] party_array; }

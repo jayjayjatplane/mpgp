@@ -13,12 +13,10 @@ class Pokedex : public Pokemon, PokemonParty {
   Pokedex();
   Pokedex(int capacity);
 
-  void add_pokemon(Pokemon pokemon);
   void display_pokedex();
-  void rem_pokemon_from_party(int index);
-
-  void add_pokemon_from_party();
-  void display_pokemon_list();
+  void add_pokemon_to_pokedex(Pokemon pokemon);
+  void rem_pokemon_from_pokedex(Pokemon pokemon);
+  ~Pokedex();
 };
 
 #endif

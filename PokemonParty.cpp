@@ -25,7 +25,6 @@ void PokemonParty::display_party() {
     cout << " Species: " << party_array[i].get_species() << " | ";
     cout << " Type: " << party_array[i].get_type() << " | ";
     cout << " Health: " << party_array[i].get_health() << " | ";
-    cout << " Level: " << party_array[i].get_level() << " | ";
     cout << "\n";
   }
 }
@@ -43,8 +42,7 @@ void PokemonParty::rem_pokemon_from_party(Pokemon pokemon) {
     if (party_array[i].get_species() == pokemon.get_species() &&
         party_array[i].get_type() == pokemon.get_type() &&
         party_array[i].get_health() == pokemon.get_health() &&
-        party_array[i].get_moveset() == pokemon.get_moveset() &&
-        party_array[i].get_level() == pokemon.get_level()) {
+        party_array[i].get_moveset() == pokemon.get_moveset()) {
       for (int j = i; j < party_size - 1; j++) {
         party_array[j] = party_array[j + 1];
       }
@@ -58,7 +56,7 @@ void PokemonParty::rem_pokemon_from_party(Pokemon pokemon) {
 
 void PokemonParty::add_pokemon() {
   string species, type, moveset;
-  int health, level;
+  int health;
   cout << "Enter Pokemon species: ";
   cin >> species;
   cout << "Enter Pokemon type: ";
@@ -67,9 +65,7 @@ void PokemonParty::add_pokemon() {
   cin >> health;
   cout << "Enter Pokemon moveset: ";
   cin >> moveset;
-  cout << "Enter Pokemon level: ";
-  cin >> level;
-  Pokemon new_pokemon(species, type, health, moveset, level);
+  Pokemon new_pokemon(species, type, health, moveset);
   add_pokemon_to_party(new_pokemon);
   cout << "Pokemon added!" << endl;
 }
