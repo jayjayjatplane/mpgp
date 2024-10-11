@@ -20,9 +20,5 @@ int main() {
   // Bulbasaur attacks Charmander
   Bulbasaur.attack(Charmander);
 
-  // Show Charmander's health after the attack
-  cout << Charmander.get_species() << " now has " << Charmander.get_health()
-       << " health after the attack." << endl;
-
   return 0;
 }
