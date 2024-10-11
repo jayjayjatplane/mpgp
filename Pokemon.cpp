@@ -21,6 +21,25 @@ Pokemon::Pokemon(string new_string, string new_type, int new_health,
   moveset = new_moveset;
 }
 
+// functions
+void Pokemon::attack(Pokemon& target, int move_damage) {
+  int damage = move_damage;
+  cout << species << " attacks " << target.get_species() << " for " << damage
+       << " damage!" << endl;
+  target.takeDamage(damage);
+}
+
+void Pokemon::takeDamage(int damage) {
+  health -= damage;
+  if (health < 0) health = 0;
+
+  if (health == 0) {
+    cout << species << " has fainted" << endl;
+  } else {
+    cout << species << " now has " << health << " health remaining." << endl;
+  }
+}
+
 // Getters
 string Pokemon::get_species() { return species; }
 string Pokemon::get_type() { return type; }

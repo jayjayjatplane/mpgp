@@ -36,6 +36,8 @@ class Pokemon {
   void set_moveset(string new_moveset);
 
   // Functions
+  void attack(Pokemon& target, int move_damage);
+  void takeDamage(int damage);
 
   // Destructors
 };
