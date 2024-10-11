@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+#include "Move.h"
+
 using namespace std;
 
 // VCGSFD
@@ -14,29 +16,28 @@ class Pokemon {
   string species;
   string type;
   int health;
-  string moveset;
+  Move moveset;
 
  public:
   // Constructors
   Pokemon();
 
-  Pokemon(string new_string, string new_type, int new_health,
-          string new_moveset);
+  Pokemon(string new_string, string new_type, int new_health, Move new_moveset);
 
   // Getters
   string get_species();
   string get_type();
   int get_health();
-  string get_moveset();
+  Move get_moveset();
 
   // Setters
   void set_species(string new_string);
   void set_type(string new_type);
   void set_health(int new_health);
-  void set_moveset(string new_moveset);
+  void set_moveset(Move new_moveset);
 
   // Functions
-  void attack(Pokemon& target, int move_damage);
+  void attack(Pokemon& target);
   void takeDamage(int damage);
 
   // Destructors

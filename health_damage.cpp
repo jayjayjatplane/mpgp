@@ -6,10 +6,8 @@ using namespace std;
 
 int main() {
   // Create Pokémon
-  Pokemon Bulbasaur("Bulbasaur", "Grass/Poison", 80,
-                    "Razor Leaf, Sleep Powder, Poison Powder, Leech Seed");
-  Pokemon Charmander("Charmander", "Fire", 70,
-                     "Flamethrower, Scratch, Growl, Ember");
+  Pokemon Bulbasaur("Bulbasaur", "Grass/Poison", 80, "Razor Leaf");
+  Pokemon Charmander("Charmander", "Fire", 70, "Ember");
 
   // Display initial health
   cout << Charmander.get_species() << " has " << Charmander.get_health()
