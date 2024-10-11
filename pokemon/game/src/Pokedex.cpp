@@ -10,7 +10,7 @@ Pokedex::Pokedex() {
 }
 
 Pokedex::Pokedex(int capacity) {
-  pokedex_capacity = capacity;
+  pokedex_capacity = 0;
   pokedex_array = new Pokemon[party_capacity];
 }
 

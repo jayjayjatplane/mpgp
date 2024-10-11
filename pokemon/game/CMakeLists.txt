@@ -7,6 +7,7 @@ target_sources(game
         src/Pokedex.cpp
         src/Pokemon.cpp
         src/PokemonParty.cpp
+        src/Trainer.cpp
 )
 
 # Include directories for the 'game' target

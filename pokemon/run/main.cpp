@@ -6,33 +6,11 @@
 
 using namespace std;
 
-// Adding the First 100 Pokemon into the Pokedex
+// Adding the First 30 Pokemon into the Pokedex
 
 void pokedexMenu(Pokedex pokedex_num) {
   // to do: implement displaying Pokemon list
-  cout << "\n";
-  while (true) {
-    cout << "POKEDEX MENU:" << endl;
-    cout << "1. Display Pokedex" << endl;
-    cout << "2. Go Back" << endl;
-    cout << "\n";
-    cout << "Enter your choice: " << endl;
-    int pokedex_menu_choice;
-    cin >> pokedex_menu_choice;
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-            "\n\n\n\n\n"
-         << endl;
-
-    if (pokedex_menu_choice == 1) {
-      pokedex_num.display_pokedex();
-      cout << "\n";
-    } else if (pokedex_menu_choice == 2) {
-      cout << "\n";
-      break;
-    } else {
-      cout << "Please enter a valid choice.\n" << endl;
-    }
-  }
+  pokedex_num.display_pokedex();
 }
 
 void addPokemon() {
@@ -146,8 +124,9 @@ void gameMenu() {
 }
 
 int main() {
-  // PokemonParty party;
+  // pokdex created;
   Pokedex pokedex_thirty(30);
+  PokemonParty trainer_party(6);
 
   // 1
   Pokemon Venusaur("Venusaur", "Grass", 80,
@@ -267,6 +246,56 @@ int main() {
   Pokemon Slowbro("Slowbro", "Water", 65, "Tackle, Yawn, Withdraw, Water Gun");
   pokedex_thirty.add_pokemon_to_pokedex(Slowbro);
 
+  // TRAINERS POKEMON
+  //
+  //
+  //
+  //
+  //
+
+  //
+
+  //
+  Pokemon Venusaur2("Venusaur", "Grass", 80,
+                    "Solar Beam, Sleep Powder, Razor Leaf, Earthquake");
+  trainer_party.add_pokemon_to_party(Venusaur);
+  // 2
+  Pokemon Charizard2("Charizard", "Fire", 78,
+                     "Flamethrower, Dragon Claw, Fire Blast, Fly");
+  trainer_party.add_pokemon_to_party(Charizard);
+  // 3
+  Pokemon Blastoise2("Blastoise", "Water", 79,
+                     "Hydro Pump, Skull Bash, Withdraw, Earthquake");
+  trainer_party.add_pokemon_to_party(Blastoise);
+  // 4
+  Pokemon Butterfree2("Butterfree", "Bug", 60,
+                      "Quiver Dance, Bug Bite, Poison Powder, Aerial Ace");
+  trainer_party.add_pokemon_to_party(Butterfree);
+  // 5
+  Pokemon Beedrill2("Beedrill", "Bug", 65,
+                    "Twister, Bug Bite, Poison Fang, Agility");
+  trainer_party.add_pokemon_to_party(Beedrill);
+  // 6
+  Pokemon Pidgeot2("Pidgeot", "Normal", 83,
+                   "Quick Attack, Whirlwind, Sand Attack, Aerial Ace");
+  trainer_party.add_pokemon_to_party(Pidgeot);
+
+  trainer_party.display_party();
+
+  //
+
+  //
+  //
+
+  //
+  //
+
+  //
+
+  //
+
+  //
+
   cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
           "\n\n\n\n\n";
   string name = "";
@@ -305,7 +334,8 @@ int main() {
             "\n\n\n\n\n"
          << endl;
     if (choice == 1) {
-      pokedexMenu(pokedex_thirty);
+      pokedex_thirty.display_pokedex();
+      cout << "Pokedex Displayed.\n\n" << endl;
     } else if (choice == 2) {
       partyMenu();
     } else if (choice == 3) {

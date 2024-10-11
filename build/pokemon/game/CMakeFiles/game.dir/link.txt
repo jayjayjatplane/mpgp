@@ -1,2 +1,2 @@
-/usr/bin/ar qc libgame.a CMakeFiles/game.dir/src/Pokedex.cpp.o CMakeFiles/game.dir/src/Pokemon.cpp.o CMakeFiles/game.dir/src/PokemonParty.cpp.o
+/usr/bin/ar qc libgame.a CMakeFiles/game.dir/src/Pokedex.cpp.o CMakeFiles/game.dir/src/Pokemon.cpp.o CMakeFiles/game.dir/src/PokemonParty.cpp.o CMakeFiles/game.dir/src/Trainer.cpp.o
 /usr/bin/ranlib libgame.a
