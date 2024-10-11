@@ -41,5 +41,18 @@ int main() {
   Move Icebeam("Ice Beam", "Ice", 30);
   Move Shadowball("Shadow Ball", "Ghost", 30);
 
+  // Create Pokémon objects
+  Pokemon Bulbasaur("Bulbasaur", "Grass/Poison", 80, Gigadrain);
+  Pokemon Charmander("Charmander", "Fire", 70, Flamethrower);
+
+  // Display initial health
+  cout << Charmander.get_species() << " has " << Charmander.get_health()
+       << " health." << endl;
+
+  // Bulbasaur attacks Charmander
+  Bulbasaur.attack(Charmander);
+
+  return 0;
+
   return 0;
 }
