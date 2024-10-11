@@ -7,11 +7,12 @@ using namespace std;
 
 int main() {
   // Create a Move object
-  Move razorLeaf("Razor Leaf", 15);
+  Move razorLeaf("Razor Leaf", "Grass", 15);
 
   // Create Pokémon objects
   Pokemon Bulbasaur("Bulbasaur", "Grass/Poison", 80, razorLeaf);
-  Pokemon Charmander("Charmander", "Fire", 70, Move("Flamethrower", 20));
+  Pokemon Charmander("Charmander", "Fire", 70,
+                     Move("Flamethrower", "Fire", 20));
 
   // Display initial health
   cout << Charmander.get_species() << " has " << Charmander.get_health()
