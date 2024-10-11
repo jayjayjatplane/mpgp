@@ -122,8 +122,8 @@ void gameMenu() {
 
 int main() {
   // PokemonParty party;
-  Pokedex pokedex_thirty(40);
-  /*
+  Pokedex pokedex_thirty(30);
+
   // 1
   Pokemon Venusaur("Venusaur", "Grass/Poison", 80,
                    "Solar Beam, Sleep Powder, Razor Leaf, Earthquake");
@@ -243,7 +243,6 @@ int main() {
   Pokemon Slowbro("Slowbro", "Water/Psychic", 65,
                   "Tackle, Yawn, Withdraw, Water Gun");
   pokedex_thirty.add_pokemon_to_pokedex(Slowbro);
-  */
 
   cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
           "\n\n\n\n\n";

@@ -7,7 +7,7 @@ using namespace std;
 // Constructors
 PokemonParty::PokemonParty() {
   party_size = 0;
-  party_capacity = 6;
+  party_capacity = 30;
   party_array = new Pokemon[party_capacity];
 }
 

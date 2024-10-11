@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Game Executable",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/pokemon/run/run", // Path to your compiled game executable
+            "args": [], // Arguments to pass to your game executable (if any)
+            "stopAtEntry": false, // Set to true if you want to stop at the program entry
+            "cwd": "${workspaceFolder}/pokemon/run", // Set the working directory, usually the source or build dir
+            "environment": [], // Any environment variables your game might need
+            "externalConsole": false, // Set to true if you want to run in an external console
+            "MIMode": "gdb", // Use gdb for Linux/Windows with MinGW, or use "lldb" for macOS/Clang
+            "miDebuggerPath": "/usr/bin/gdb", // Path to gdb (adjust for your system)
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build", // Optional: build the project before launching the executable
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}

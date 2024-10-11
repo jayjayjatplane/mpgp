@@ -4,10 +4,14 @@
 
 using namespace std;
 
-Pokedex::Pokedex() : Pokemon() { pokemon_party = PokemonParty(); }
+Pokedex::Pokedex() {
+  pokedex_capacity = 0;
+  pokedex_array = new Pokemon[party_capacity];
+}
 
-Pokedex::Pokedex(int capacity) : Pokemon() {
-  pokemon_party = PokemonParty(capacity);
+Pokedex::Pokedex(int capacity) {
+  pokedex_capacity = capacity;
+  pokedex_array = new Pokemon[party_capacity];
 }
 
 void Pokedex::display_pokedex() {
@@ -18,7 +22,7 @@ void Pokedex::display_pokedex() {
   cout << "This is the Pokedex, which shows the type, health and moveset of "
           "every Pokemon available:"
        << endl;
-  int size = pokemon_party.party_capacity;
+  int size = party_capacity;
   for (int i = 0; i < size; i++) {
     cout << "Pokemon " << i + 1 << ":" << endl;
     cout << " Species: " << party_array[i].get_species() << " | ";
@@ -29,7 +33,7 @@ void Pokedex::display_pokedex() {
   }
 }
 void Pokedex::rem_pokemon_from_pokedex(Pokemon pokemon) {
-  pokemon_party.rem_pokemon_from_party(pokemon);
+  rem_pokemon_from_party(pokemon);
 }
 
 void Pokedex::add_pokemon_to_pokedex(Pokemon pokemon) {

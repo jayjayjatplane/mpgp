@@ -8,7 +8,8 @@ using namespace std;
 
 class Pokedex : public Pokemon, PokemonParty {
  public:
-  PokemonParty pokemon_party;
+  Pokemon* pokedex_array;
+  int pokedex_capacity;
 
   Pokedex();
   Pokedex(int capacity);
