@@ -1,12 +1,11 @@
 #ifndef POKEDEX_H
 #define POKEDEX_H
 
-#include "Pokemon.h"
 #include "PokemonParty.h"
 
 using namespace std;
 
-class Pokedex : public Pokemon, PokemonParty {
+class Pokedex : public PokemonParty {
  public:
   Pokemon* pokedex_array;
   int pokedex_capacity;
