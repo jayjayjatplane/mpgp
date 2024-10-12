@@ -28,7 +28,11 @@ void Pokedex::display_pokedex() {
     cout << " Species: " << party_array[i].get_species() << " | ";
     cout << " Type: " << party_array[i].get_type() << " | ";
     cout << " Health: " << party_array[i].get_health() << " | ";
-    cout << " Moveset: " << party_array[i].get_moveset() << endl;
+    // Displaying Move information
+    Move moveset = party_array[i].get_moveset();
+    cout << " Moveset: " << moveset.get_move_name()
+         << " (Type: " << moveset.get_move_type()
+         << ", Damage: " << moveset.get_damage() << ")" << endl;
     cout << "\n";
   }
 }
