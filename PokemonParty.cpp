@@ -87,12 +87,3 @@ void PokemonParty::display_pokemon_list() { display_party(); }
 
 // Destructors
 PokemonParty::~PokemonParty() { delete[] party_array; }
-
-void PokemonParty::add_pokemon_to_party(Pokemon pokemon) {
-  if (party_size < party_capacity) {
-    party_array[party_size] = pokemon;
-    party_size++;
-  } else {
-    cout << "Pokemon party is full!" << endl;
-  }
-}
