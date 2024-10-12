@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Move.h"
+#include "Pokedex.h"
 #include "Pokemon.h"
 
 using namespace std;
@@ -40,6 +41,9 @@ int main() {
   Move Dragonpulse("Dragon Pulse", "Dragon", 40);
   Move Icebeam("Ice Beam", "Ice", 30);
   Move Shadowball("Shadow Ball", "Ghost", 30);
+
+  // PokemonParty party;
+  Pokedex pokedex_thirty(30);
 
   // Create Pokémon objects
   Pokemon Venusaur("Venusaur", "Grass", 80, Gigadrain);
