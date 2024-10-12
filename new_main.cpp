@@ -9,8 +9,6 @@
 
 extern void performBattle(Trainer& userTrainer, Trainer& gymLeader);
 extern void initializePokedex(Pokedex& pokedex);
-extern void addPokemon();
-extern void removePokemon();
 
 using namespace std;
 
@@ -47,27 +45,81 @@ void fightGym() { cout << "You fought a gym and won!" << endl; }
 
 void fightChampion() { cout << "You fought the champion and won!" << endl; }
 
-void partyMenu() {
+int MAX_PARTY = 6;  // Maximum party size for a Trainer
+
+void addPokemon(Trainer& userTrainer, Pokedex& pokedex) {
+  // Display the list of Pokémon the player can choose from
+  cout << "Select a Pokémon to add to your party:" << endl;
+  for (int i = 0; i < pokedex.getSize();
+       ++i) {  // Assuming getSize() returns the Pokedex size
+    cout << i + 1 << ". " << pokedex.getPokemonByIndex(i).get_species() << endl;
+  }
+  int choice;
+  cin >> choice;
+
+  // Add the selected Pokémon to the party (adjusting index)
+  if (choice > 0 && choice <= pokedex.getSize()) {
+    if (userTrainer.get_party_size() < 3) {  // Maximum party size of 3
+      userTrainer.addPokemonToParty(
+          pokedex.getPokemonByIndex(choice - 1));  // Add from Pokedex
+      cout << pokedex.getPokemonByIndex(choice - 1).get_species()
+           << " added to your party!" << endl;
+    } else {
+      cout << "Your party is full!" << endl;
+    }
+  } else {
+    cout << "Invalid choice!" << endl;
+  }
+}
+
+void removePokemon(Trainer& userTrainer) {
+  // Display the current party
+  cout << "Select a Pokémon to remove from your party:" << endl;
+  int partySize = userTrainer.get_party_size();
+  Pokemon* currentParty = userTrainer.get_party();
+
+  for (int i = 0; i < partySize; ++i) {
+    cout << i + 1 << ". " << currentParty[i].get_species() << endl;
+  }
+  int choice;
+  cin >> choice;
+
+  // Remove the selected Pokémon (adjusting index)
+  if (choice > 0 && choice <= partySize) {
+    cout << currentParty[choice - 1].get_species()
+         << " removed from your party!" << endl;
+    userTrainer.removePokemonFromParty(
+        currentParty[choice - 1]);  // Remove based on index
+  } else {
+    cout << "Invalid choice!" << endl;
+  }
+}
+
+void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
   while (true) {
     cout << "POKEMON PARTY MENU:" << endl;
     cout << "1. Add Pokemon" << endl;
     cout << "2. Remove Pokemon" << endl;
-    cout << "3. Go Back" << endl;
-    cout << "\n";
-    cout << "Enter your choice: " << endl;
+    cout << "3. View Party" << endl;  // New option to view party
+    cout << "4. Go Back" << endl;
+    cout << "\nEnter your choice: ";
     int party_menu_choice;
     cin >> party_menu_choice;
+
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
 
     if (party_menu_choice == 1) {
-      addPokemon();
+      addPokemon(userTrainer, pokedex);
       cout << "\n";
     } else if (party_menu_choice == 2) {
-      removePokemon();
+      removePokemon(userTrainer);
       cout << "\n";
     } else if (party_menu_choice == 3) {
+      userTrainer.display_party();  // Call to display party
+      cout << "\n";
+    } else if (party_menu_choice == 4) {
       break;
     } else {
       cout << "Please enter a valid choice.\n" << endl;
@@ -136,6 +188,8 @@ int main() {
        << endl;
   cout << "Hi Trainer " << name << "! " << endl;
 
+  Trainer userTrainer(name);
+
   int choice_counter = 0;
   while (true) {
     cout << "Main Menu:" << endl;
@@ -152,7 +206,7 @@ int main() {
     if (choice == 1) {
       pokedexMenu(pokedex_thirty);
     } else if (choice == 2) {
-      partyMenu();
+      partyMenu(userTrainer, pokedex_thirty);
     } else if (choice == 3) {
       gameMenu();
     } else {

@@ -85,5 +85,19 @@ void PokemonParty::add_pokemon() {
 
 void PokemonParty::display_pokemon_list() { display_party(); }
 
+// Getter functions
+int PokemonParty::getPartySize() { return party_size; }
+
+Pokemon* PokemonParty::getParty() { return party_array; }
+
+Pokemon PokemonParty::getPokemonAt(int index) {
+  if (index >= 0 && index < party_size) {
+    return party_array[index];
+  }
+  // Handle invalid index
+  return Pokemon();  // Return default-constructed Pokemon if index is out of
+                     // bounds
+}
+
 // Destructors
 PokemonParty::~PokemonParty() { delete[] party_array; }

@@ -64,16 +64,22 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
       // Attack
       cout << "Choose a move for " << userPokemon->get_species() << ": "
            << endl;
-      cout << "1. " << userPokemon->get_moveset().get_move_name() << endl;
+      cout << "1. Basic Attack" << endl;
+      cout << "2. " << userPokemon->get_moveset().get_move_name() << endl;
 
       int moveChoice;
       cin >> moveChoice;
 
       // User attacks
-      cout << userPokemon->get_species() << " used "
-           << userPokemon->get_moveset().get_move_name() << "!\n";
-      int damage = userPokemon->get_moveset().get_damage();
-      gymLeaderPokemon->takeDamage(damage);
+      if (moveChoice == 1) {
+        cout << userPokemon->get_species() << " used Basic Attack!\n";
+        gymLeaderPokemon->takeDamage(10);
+      } else if (moveChoice == 2) {
+        cout << userPokemon->get_species() << " used "
+             << userPokemon->get_moveset().get_move_name() << "!\n";
+        int damage = userPokemon->get_moveset().get_damage();
+        gymLeaderPokemon->takeDamage(damage);
+      }
 
       // Check if the gym leader's Pokémon fainted
       if (gymLeaderPokemon->get_health() <= 0) {
@@ -114,10 +120,20 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
 
     // Gym Leader's turn
     if (gymLeaderPokemon->get_health() > 0) {
-      cout << gymLeaderPokemon->get_species() << " used "
-           << gymLeaderPokemon->get_moveset().get_move_name() << "\n";
-      int leaderMoveDamage = gymLeaderPokemon->get_moveset().get_damage();
-      userPokemon->takeDamage(leaderMoveDamage);
+      // Gym Leader randomly chooses between basic attack and move
+      int gymLeaderMoveChoice = rand() % 2;  // 0 for move, 1 for basic attack
+
+      if (gymLeaderMoveChoice == 0) {
+        // Gym Leader attacks with their Pokémon's move
+        cout << gymLeaderPokemon->get_species() << " used "
+             << gymLeaderPokemon->get_moveset().get_move_name() << "!\n";
+        int leaderMoveDamage = gymLeaderPokemon->get_moveset().get_damage();
+        userPokemon->takeDamage(leaderMoveDamage);
+      } else {
+        // Gym Leader uses basic attack (10 damage)
+        cout << gymLeaderPokemon->get_species() << " used Basic Attack!\n";
+        userPokemon->takeDamage(10);
+      }
 
       // Check if the user's Pokémon fainted
       if (userPokemon->get_health() <= 0) {

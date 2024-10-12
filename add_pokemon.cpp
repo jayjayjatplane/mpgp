@@ -3,6 +3,7 @@
 #include "Move.h"
 #include "Pokedex.h"
 #include "Pokemon.h"
+#include "PokemonParty.h"
 
 void addPokemon() {
   /* \

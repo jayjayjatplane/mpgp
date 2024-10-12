@@ -49,4 +49,15 @@ void Trainer::removePokemonFromParty(Pokemon pokemon) {
   cout << "Pokemon not found in party!" << endl;
 }
 
+void Trainer::display_party() {
+  cout << "Pokemon Party:" << endl;
+  for (int i = 0; i < party_size; i++) {
+    cout << "Pokemon " << i + 1 << ":" << endl;
+    cout << " Species: " << party[i].get_species() << " | ";
+    cout << " Type: " << party[i].get_type() << " | ";
+    cout << " Health: " << party[i].get_health() << " | ";
+    cout << "\n";
+  }
+}
+
 Trainer::~Trainer() { delete[] party; }

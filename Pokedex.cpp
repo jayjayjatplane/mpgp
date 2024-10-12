@@ -47,4 +47,8 @@ void Pokedex::add_pokemon_to_pokedex(Pokemon pokemon) {
   }
 }
 
+int Pokedex::getSize() { return getPartySize(); }
+
+Pokemon Pokedex::getPokemonByIndex(int index) { return getPokemonAt(index); }
+
 Pokedex::~Pokedex() {}

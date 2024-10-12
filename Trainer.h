@@ -29,7 +29,7 @@ class Trainer {
   // Other functions
   void addPokemonToParty(Pokemon pokemon);
   void removePokemonFromParty(Pokemon pokemon);
-
+  void display_party();
   // Destructor
   ~Trainer();
 };
