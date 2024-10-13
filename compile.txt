@@ -1,0 +1,2 @@
+g++ new_main.cpp Pokemon.cpp Pokedex.cpp PokemonParty.cpp Trainer.cpp Move.cpp battle_function.cpp pokemon_storage.cpp -o new_game
+./new_game
