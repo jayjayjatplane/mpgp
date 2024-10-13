@@ -39,9 +39,65 @@ void pokedexMenu(Pokedex pokedex_num) {
   }
 }
 
-void fightGym() { cout << "You fought a gym and won!" << endl; }
+void fightGym1(Trainer& userTrainer) {
+  Trainer gymLeader1("Gym Leader 1");
+  Move RapidSpin("Rapid Spin", "Water", 25);
+  Move WaterShuriken("Water Shuriken", "Water", 30);
+  Move WaveCrash("Wave Crash", "Water", 40);
+  Pokemon Omastar("Omastar", "Water", 50, RapidSpin);
+  Pokemon Greninja("Greninja", "Water", 60, WaterShuriken);
+  Pokemon Suicune("Suicune", "Water", 80, WaveCrash);
+  gymLeader1.addPokemonToParty(Omastar);
+  gymLeader1.addPokemonToParty(Greninja);
+  gymLeader1.addPokemonToParty(Suicune);
 
-void fightChampion() { cout << "You fought the champion and won!" << endl; }
+  performBattle(userTrainer, gymLeader1);
+}
+
+void fightGym2(Trainer& userTrainer) {
+  Trainer gymLeader2("Gym Leader 2");
+  Move FireSpin("Fire Spin", "Fire", 20);
+  Move Inferno("Inferno", "Fire", 35);
+  Move SacredFire("Sacred Fire", "Fire", 40);
+  Pokemon Toarkoal("Toarkoal", "Fire", 50, FireSpin);
+  Pokemon Infernape("Infernape", "Fire", 60, Inferno);
+  Pokemon Entei("Entei", "Fire", 70, SacredFire);
+  gymLeader2.addPokemonToParty(Toarkoal);
+  gymLeader2.addPokemonToParty(Infernape);
+  gymLeader2.addPokemonToParty(Entei);
+
+  performBattle(userTrainer, gymLeader2);
+}
+
+void fightGym3(Trainer& userTrainer) {
+  Trainer gymLeader3("Gym Leader 3");
+  Move Shockwave("Shockwave", "Electric", 25);
+  Move VoltTackle("Volt Tackle", "Electric", 50);
+  Move Thunder("Thunder", "Electric", 40);
+  Pokemon Jolteon("Jolteon", "Electric", 50, Shockwave);
+  Pokemon Pikachu("Pikachu", "Electric", 40, VoltTackle);
+  Pokemon Raikou("Raikou", "Electric", 70, Thunder);
+  gymLeader3.addPokemonToParty(Jolteon);
+  gymLeader3.addPokemonToParty(Pikachu);
+  gymLeader3.addPokemonToParty(Raikou);
+
+  performBattle(userTrainer, gymLeader3);
+}
+
+void fightChampion(Trainer& userTrainer) {
+  Trainer champion("Champion");
+  Move HeavySlam("Heavy Slam", "Steel", 30);
+  Move DracoMeteor("Draco Meteror", "Dragon", 40);
+  Move Incinerate("Incinerate", "Fire", 40);
+  Pokemon Metagross("Metagross", "Steel", 70, HeavySlam);
+  Pokemon Dragonite("Dragonite", "Dragon", 80, DracoMeteor);
+  Pokemon Hooh("HO-OH", "Fire", 80, Incinerate);
+  champion.addPokemonToParty(Metagross);
+  champion.addPokemonToParty(Dragonite);
+  champion.addPokemonToParty(Hooh);
+
+  performBattle(userTrainer, champion);
+}
 
 int MAX_PARTY = 6;  // Maximum party size for a Trainer
 
@@ -125,7 +181,7 @@ void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
   }
 }
 
-void gameMenu() {
+void gameMenu(Trainer& userTrainer) {
   while (true) {
     cout << "Game Menu:" << endl;
     cout << "1. Fight Gym 1" << endl;
@@ -142,16 +198,16 @@ void gameMenu() {
          << endl;
 
     if (game_menu_choice == 1) {
-      fightGym();
+      fightGym1(userTrainer);
       cout << "\n";
     } else if (game_menu_choice == 2) {
-      fightGym();
+      fightGym2(userTrainer);
       cout << "\n";
     } else if (game_menu_choice == 3) {
-      fightGym();
+      fightGym3(userTrainer);
       cout << "\n";
     } else if (game_menu_choice == 4) {
-      fightChampion();
+      fightChampion(userTrainer);
       cout << "\n";
     } else if (game_menu_choice == 5) {
       break;
@@ -194,50 +250,6 @@ int main() {
 
   Trainer userTrainer(name);
 
-  Trainer gymLeader1("Gym Leader 1");
-  Move RapidSpin("Rapid Spin", "Water", 25);
-  Move WaterShuriken("Water Shuriken", "Water", 30);
-  Move WaveCrash("Wave Crash", "Water", 40);
-  Pokemon Omastar("Omastar", "Water", 50, RapidSpin);
-  Pokemon Greninja("Greninja", "Water", 60, WaterShuriken);
-  Pokemon Suicune("Suicune", "Water", 80, WaveCrash);
-  gymLeader1.addPokemonToParty(Omastar);
-  gymLeader1.addPokemonToParty(Greninja);
-  gymLeader1.addPokemonToParty(Suicune);
-
-  Trainer gymLeader2("Gym Leader 2");
-  Move FireSpin("Fire Spin", "Fire", 20);
-  Move Inferno("Inferno", "Fire", 35);
-  Move SacredFire("Sacred Fire", "Fire", 40);
-  Pokemon Toarkoal("Toarkoal", "Fire", 50, FireSpin);
-  Pokemon Infernape("Infernape", "Fire", 60, Inferno);
-  Pokemon Entei("Entei", "Fire", 70, SacredFire);
-  gymLeader2.addPokemonToParty(Toarkoal);
-  gymLeader2.addPokemonToParty(Infernape);
-  gymLeader2.addPokemonToParty(Entei);
-
-  Trainer gymLeader3("Gym Leader 3");
-  Move Shockwave("Shockwave", "Electric", 25);
-  Move VoltTackle("Volt Tackle", "Electric", 50);
-  Move Thunder("Thunder", "Electric", 40);
-  Pokemon Jolteon("Jolteon", "Electric", 50, Shockwave);
-  Pokemon Pikachu("Pikachu", "Electric", 40, VoltTackle);
-  Pokemon Raikou("Raikou", "Electric", 70, Thunder);
-  gymLeader3.addPokemonToParty(Jolteon);
-  gymLeader3.addPokemonToParty(Pikachu);
-  gymLeader3.addPokemonToParty(Raikou);
-
-  Trainer champion("Champion");
-  Move HeavySlam("Heavy Slam", "Steel", 30);
-  Move DracoMeteor("Draco Meteror", "Dragon", 40);
-  Move Incinerate("Incinerate", "Fire", 40);
-  Pokemon Metagross("Metagross", "Steel", 70, HeavySlam);
-  Pokemon Dragonite("Dragonite", "Dragon", 80, DracoMeteor);
-  Pokemon Hooh("HO-OH", "Fire", 80, Incinerate);
-  champion.addPokemonToParty(Metagross);
-  champion.addPokemonToParty(Dragonite);
-  champion.addPokemonToParty(Hooh);
-
   int choice_counter = 0;
   while (true) {
     cout << "Main Menu:" << endl;
@@ -256,7 +268,7 @@ int main() {
     } else if (choice == 2) {
       partyMenu(userTrainer, pokedex_thirty);
     } else if (choice == 3) {
-      gameMenu();
+      gameMenu(userTrainer);
     } else {
       cout << "Please Enter a Valid Choice (1 or 2)";
       choice_counter++;
