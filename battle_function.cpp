@@ -10,6 +10,8 @@
 using namespace std;
 
 void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
+  cout << "\n";
+
   int userPokemonIndex = 0;
   int gymLeaderPokemonIndex = 0;
 
@@ -55,6 +57,8 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
     cout << "Opponent " << gymLeaderPokemon->get_species()
          << " (Health: " << gymLeaderPokemon->get_health() << ")" << endl;
 
+    cout << "\n";
+
     // User's turn
     cout << "\nChoose an action:\n1. Attack\n2. Switch Pokémon\n";
     int actionChoice;
@@ -70,6 +74,8 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
       int moveChoice;
       cin >> moveChoice;
 
+      cout << "\n";
+
       // User attacks
       if (moveChoice == 1) {
         cout << userPokemon->get_species() << " used Basic Attack!\n";
@@ -83,7 +89,7 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
 
       // Check if the gym leader's Pokémon fainted
       if (gymLeaderPokemon->get_health() <= 0) {
-        cout << gymLeaderPokemon->get_species() << " fainted!" << endl;
+        cout << "\n";
         // Select next available Pokémon for gym leader
         gymLeaderPokemonIndex++;
         while (gymLeaderPokemonIndex < gymLeader.get_party_size() &&
