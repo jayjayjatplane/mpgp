@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
+bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
   cout << "\n";
 
   int userPokemonIndex = 0;
@@ -35,7 +35,7 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
     }
     if (!userHasPokemonLeft) {
       cout << "You have no more Pokémon! You lost the battle!" << endl;
-      break;
+      return false;
     }
 
     // Check if all of the gym leader's Pokémon have fainted
@@ -48,7 +48,7 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
     }
     if (!gymLeaderHasPokemonLeft) {
       cout << "You defeated the Gym Leader!" << endl;
-      break;
+      return true;
     }
 
     // Display current status
@@ -101,6 +101,7 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
           cout << gymLeader.get_name() << "'s "
                << gymLeaderPokemon->get_species() << " enters the battle!"
                << endl;
+          continue;
         }
       }
     } else if (actionChoice == 2) {
@@ -143,7 +144,6 @@ void performBattle(Trainer& userTrainer, Trainer& gymLeader) {
 
       // Check if the user's Pokémon fainted
       if (userPokemon->get_health() <= 0) {
-        cout << userPokemon->get_species() << " fainted!" << endl;
         // switch to the next available Pokémon
         for (int i = 0; i < userTrainer.get_party_size(); i++) {
           if (userTrainer.get_party()[i].get_health() > 0) {

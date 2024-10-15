@@ -7,7 +7,7 @@
 #include "PokemonParty.h"
 #include "Trainer.h"
 
-extern void performBattle(Trainer& userTrainer, Trainer& gymLeader);
+extern bool performBattle(Trainer& userTrainer, Trainer& gymLeader);
 extern void initializePokedex(Pokedex& pokedex);
 
 using namespace std;
@@ -39,7 +39,7 @@ void pokedexMenu(Pokedex pokedex_num) {
   }
 }
 
-void fightGym1(Trainer& userTrainer) {
+void fightGym1(Trainer& userTrainer, int& badges) {
   Trainer gymLeader1("Gym Leader 1");
   Move RapidSpin("Rapid Spin", "Water", 25);
   Move WaterShuriken("Water Shuriken", "Water", 30);
@@ -51,10 +51,17 @@ void fightGym1(Trainer& userTrainer) {
   gymLeader1.addPokemonToParty(Greninja);
   gymLeader1.addPokemonToParty(Suicune);
 
-  performBattle(userTrainer, gymLeader1);
+  bool userWon = performBattle(userTrainer, gymLeader1);
+
+  if (userWon) {
+    badges++;  // Increment badges if the user wins
+    cout << "You earned a gym badge! Total badges: " << badges << endl;
+  } else {
+    cout << "You lost the battle. Try again later!" << endl;
+  }
 }
 
-void fightGym2(Trainer& userTrainer) {
+void fightGym2(Trainer& userTrainer, int& badges) {
   Trainer gymLeader2("Gym Leader 2");
   Move FireSpin("Fire Spin", "Fire", 20);
   Move Inferno("Inferno", "Fire", 35);
@@ -66,10 +73,17 @@ void fightGym2(Trainer& userTrainer) {
   gymLeader2.addPokemonToParty(Infernape);
   gymLeader2.addPokemonToParty(Entei);
 
-  performBattle(userTrainer, gymLeader2);
+  bool userWon = performBattle(userTrainer, gymLeader2);
+
+  if (userWon) {
+    badges++;  // Increment badges if the user wins
+    cout << "You earned a gym badge! Total badges: " << badges << endl;
+  } else {
+    cout << "You lost the battle. Try again later!" << endl;
+  }
 }
 
-void fightGym3(Trainer& userTrainer) {
+void fightGym3(Trainer& userTrainer, int& badges) {
   Trainer gymLeader3("Gym Leader 3");
   Move Shockwave("Shockwave", "Electric", 25);
   Move VoltTackle("Volt Tackle", "Electric", 50);
@@ -81,10 +95,17 @@ void fightGym3(Trainer& userTrainer) {
   gymLeader3.addPokemonToParty(Pikachu);
   gymLeader3.addPokemonToParty(Raikou);
 
-  performBattle(userTrainer, gymLeader3);
+  bool userWon = performBattle(userTrainer, gymLeader3);
+
+  if (userWon) {
+    badges++;  // Increment badges if the user wins
+    cout << "You earned a gym badge! Total badges: " << badges << endl;
+  } else {
+    cout << "You lost the battle. Try again later!" << endl;
+  }
 }
 
-void fightChampion(Trainer& userTrainer) {
+void fightChampion(Trainer& userTrainer, int& badges) {
   Trainer champion("Champion");
   Move HeavySlam("Heavy Slam", "Steel", 30);
   Move DracoMeteor("Draco Meteror", "Dragon", 40);
@@ -96,7 +117,14 @@ void fightChampion(Trainer& userTrainer) {
   champion.addPokemonToParty(Dragonite);
   champion.addPokemonToParty(Hooh);
 
-  performBattle(userTrainer, champion);
+  bool userWon = performBattle(userTrainer, champion);
+
+  if (userWon) {
+    badges++;  // Increment badges if the user wins
+    cout << "You earned a gym badge! Total badges: " << badges << endl;
+  } else {
+    cout << "Try again later!" << endl;
+  }
 }
 
 int MAX_PARTY = 6;  // Maximum party size for a Trainer
@@ -181,14 +209,15 @@ void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
   }
 }
 
-void gameMenu(Trainer& userTrainer) {
+void gameMenu(Trainer& userTrainer, int& badges) {
   while (true) {
     cout << "Game Menu:" << endl;
     cout << "1. Fight Gym 1" << endl;
     cout << "2. Fight Gym 2" << endl;
     cout << "3. Fight Gym 3" << endl;
     cout << "4. Fight Champion" << endl;
-    cout << "5. Go Back" << endl;
+    cout << "5. Display Badges" << endl;
+    cout << "6. Go Back" << endl;
     cout << "\n";
     cout << "Enter your choice: " << endl;
     int game_menu_choice;
@@ -198,18 +227,22 @@ void gameMenu(Trainer& userTrainer) {
          << endl;
 
     if (game_menu_choice == 1) {
-      fightGym1(userTrainer);
+      fightGym1(userTrainer, badges);
       cout << "\n";
     } else if (game_menu_choice == 2) {
-      fightGym2(userTrainer);
+      fightGym2(userTrainer, badges);
       cout << "\n";
     } else if (game_menu_choice == 3) {
-      fightGym3(userTrainer);
+      fightGym3(userTrainer, badges);
       cout << "\n";
     } else if (game_menu_choice == 4) {
-      fightChampion(userTrainer);
+      fightChampion(userTrainer, badges);
       cout << "\n";
     } else if (game_menu_choice == 5) {
+      // Display the number of badges
+      cout << "You have " << badges << " badge(s)." << endl;
+      cout << "\n";
+    } else if (game_menu_choice == 6) {
       break;
     } else {
       cout << "Please enter a valid choice.\n" << endl;
@@ -220,6 +253,8 @@ void gameMenu(Trainer& userTrainer) {
 int main() {
   // Create a Pokedex instance
   Pokedex pokedex_thirty(30);
+
+  int badges = 0;
 
   // Initialize the Pokédex with Pokémon and moves
   initializePokedex(pokedex_thirty);
@@ -268,7 +303,7 @@ int main() {
     } else if (choice == 2) {
       partyMenu(userTrainer, pokedex_thirty);
     } else if (choice == 3) {
-      gameMenu(userTrainer);
+      gameMenu(userTrainer, badges);
     } else {
       cout << "Please Enter a Valid Choice (1 or 2)";
       choice_counter++;

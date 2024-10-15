@@ -1,2 +1,20 @@
 g++ new_main.cpp Pokemon.cpp Pokedex.cpp PokemonParty.cpp Trainer.cpp Move.cpp battle_function.cpp pokemon_storage.cpp -o new_game
 ./new_game
+
+
+changes:
+14/10
+battle function changed from void --> bool
+to tell if you won
+
+badges have been implemented
+if you won the battle you earn a badge 
+
+battle function modified so if you defeat the opposing pokemon their turn is skipped
+
+slight change to the output of battle function. no longer says "pokemon fainted!" as it already says this in the pokemon class
+no repeated dialogue
+
+badges display in game menu
+
+
