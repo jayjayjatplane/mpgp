@@ -1,1 +1,1 @@
-/usr/bin/g++ CMakeFiles/run.dir/battle_function.cpp.o CMakeFiles/run.dir/new_main.cpp.o CMakeFiles/run.dir/pokemon_storage.cpp.o -o run  ../game/libgame.a 
+/usr/bin/c++ CMakeFiles/run.dir/battle_function.cpp.o CMakeFiles/run.dir/new_main.cpp.o CMakeFiles/run.dir/pokemon_storage.cpp.o -o run  ../game/libgame.a 

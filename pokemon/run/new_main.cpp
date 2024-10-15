@@ -215,16 +215,16 @@ int fightChampion(Trainer& userTrainer, int& badges) {
 
   bool userWon = performBattle(userTrainer, champion);
 
+  for (int i = 0; i < userTrainer.get_party_size(); ++i) {
+    userTrainer.get_party()[i].heal();
+  }
+
   if (userWon) {
     cout << "You beat the champion and have become a Pokemon Master! " << endl;
     return 1;
   } else {
     cout << "Try again later!" << endl;
     return -1;
-  }
-
-  for (int i = 0; i < userTrainer.get_party_size(); ++i) {
-    userTrainer.get_party()[i].heal();
   }
 }
 
@@ -337,7 +337,7 @@ int main() {
       int did_win = gameMenu(userTrainer, badges);
       if (did_win == 1) {
         cout << "YOU WON" << endl;
-        return 0;
+        break;
       }
     } else {
       cout << "Please Enter a Valid Choice (1, 2, or 3)";

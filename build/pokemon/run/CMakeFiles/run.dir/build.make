@@ -73,43 +73,43 @@ pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o: pokemon/run/CMakeFiles/run
 pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o: /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp
 pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o: pokemon/run/CMakeFiles/run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o -MF CMakeFiles/run.dir/battle_function.cpp.o.d -o CMakeFiles/run.dir/battle_function.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o -MF CMakeFiles/run.dir/battle_function.cpp.o.d -o CMakeFiles/run.dir/battle_function.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp
 
 pokemon/run/CMakeFiles/run.dir/battle_function.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run.dir/battle_function.cpp.i"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp > CMakeFiles/run.dir/battle_function.cpp.i
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp > CMakeFiles/run.dir/battle_function.cpp.i
 
 pokemon/run/CMakeFiles/run.dir/battle_function.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run.dir/battle_function.cpp.s"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp -o CMakeFiles/run.dir/battle_function.cpp.s
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp -o CMakeFiles/run.dir/battle_function.cpp.s
 
 pokemon/run/CMakeFiles/run.dir/new_main.cpp.o: pokemon/run/CMakeFiles/run.dir/flags.make
 pokemon/run/CMakeFiles/run.dir/new_main.cpp.o: /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp
 pokemon/run/CMakeFiles/run.dir/new_main.cpp.o: pokemon/run/CMakeFiles/run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object pokemon/run/CMakeFiles/run.dir/new_main.cpp.o"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/run/CMakeFiles/run.dir/new_main.cpp.o -MF CMakeFiles/run.dir/new_main.cpp.o.d -o CMakeFiles/run.dir/new_main.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/run/CMakeFiles/run.dir/new_main.cpp.o -MF CMakeFiles/run.dir/new_main.cpp.o.d -o CMakeFiles/run.dir/new_main.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp
 
 pokemon/run/CMakeFiles/run.dir/new_main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run.dir/new_main.cpp.i"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp > CMakeFiles/run.dir/new_main.cpp.i
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp > CMakeFiles/run.dir/new_main.cpp.i
 
 pokemon/run/CMakeFiles/run.dir/new_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run.dir/new_main.cpp.s"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp -o CMakeFiles/run.dir/new_main.cpp.s
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp -o CMakeFiles/run.dir/new_main.cpp.s
 
 pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o: pokemon/run/CMakeFiles/run.dir/flags.make
 pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o: /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp
 pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o: pokemon/run/CMakeFiles/run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o -MF CMakeFiles/run.dir/pokemon_storage.cpp.o.d -o CMakeFiles/run.dir/pokemon_storage.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o -MF CMakeFiles/run.dir/pokemon_storage.cpp.o.d -o CMakeFiles/run.dir/pokemon_storage.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp
 
 pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run.dir/pokemon_storage.cpp.i"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp > CMakeFiles/run.dir/pokemon_storage.cpp.i
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp > CMakeFiles/run.dir/pokemon_storage.cpp.i
 
 pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run.dir/pokemon_storage.cpp.s"
-	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp -o CMakeFiles/run.dir/pokemon_storage.cpp.s
+	cd /home/jayjayjatplane/mpgp/build/pokemon/run && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp -o CMakeFiles/run.dir/pokemon_storage.cpp.s
 
 # Object files for target run
 run_OBJECTS = \
