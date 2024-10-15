@@ -21,12 +21,12 @@ void saveGame(string& trainerName, int badgeCount) {
       "save_game.txt");  // Open or create a file named "save_game.txt"
 
   if (outFile.is_open()) {
-    outFile << trainerName << std::endl;  // Write the trainer name
-    outFile << badgeCount << std::endl;   // Write the badge count
-    outFile.close();                      // Close the file
-    cout << "Game saved successfully!" << std::endl;
+    outFile << trainerName << endl;  // Write the trainer name
+    outFile << badgeCount << endl;   // Write the badge count
+    outFile.close();                 // Close the file
+    cout << "Game saved successfully!" << endl;
   } else {
-    cerr << "Error saving the game!" << std::endl;
+    cerr << "Error saving the game!" << endl;
   }
 }
 
@@ -38,9 +38,9 @@ void loadGame(string& trainerName, int& badgeCount) {
     getline(inFile, trainerName);  // Read the trainer name
     inFile >> badgeCount;          // Read the badge count
     inFile.close();                // Close the file
-    cout << "Game loaded successfully!" << std::endl;
+    cout << "Game loaded successfully!" << endl;
   } else {
-    cerr << "Error loading the game!" << std::endl;
+    cerr << "Error loading the game!" << endl;
   }
 }
 
