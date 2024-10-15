@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+#include "Limits.h"
 #include "Move.h"
 #include "Pokedex.h"
 #include "Pokemon.h"
@@ -61,8 +62,7 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
 
     // User's turn
     cout << "\nChoose an action:\n1. Attack\n2. Switch Pokémon\n";
-    int actionChoice;
-    cin >> actionChoice;
+    int actionChoice = getValidatedChoice();
 
     if (actionChoice > 2 || actionChoice < 1) {
       cout << "Invalid choice. Choose again" << endl;
@@ -76,8 +76,7 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
       cout << "1. Basic Attack" << endl;
       cout << "2. " << userPokemon->get_moveset().get_move_name() << endl;
 
-      int moveChoice;
-      cin >> moveChoice;
+      int moveChoice = getValidatedChoice();
 
       cout << "\n";
 
@@ -126,8 +125,7 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
         }
       }
 
-      int switchChoice;
-      cin >> switchChoice;
+      int switchChoice = getValidatedChoice();
 
       if (switchChoice < 1 || switchChoice > userTrainer.get_party_size()) {
         cout << "Invalid choice. Choose again" << endl;
