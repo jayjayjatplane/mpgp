@@ -136,9 +136,14 @@ void fightGym1(Trainer& userTrainer, int& badges) {
 
   if (userWon) {
     badges++;
-    cout << "You earned a gym badge! Total badges: " << badges << endl;
+    cout << "You defeated the gym leader and earned a gym badge! Total badges: "
+         << badges << endl;
   } else {
-    cout << "You lost the battle. Try again later!" << endl;
+    cout << "Try again later!" << endl;
+  }
+
+  for (int i = 0; i < userTrainer.get_party_size(); ++i) {
+    userTrainer.get_party()[i].heal();
   }
 }
 
@@ -158,9 +163,14 @@ void fightGym2(Trainer& userTrainer, int& badges) {
 
   if (userWon) {
     badges++;
-    cout << "You earned a gym badge! Total badges: " << badges << endl;
+    cout << "You defeated the gym leader and earned a gym badge! Total badges: "
+         << badges << endl;
   } else {
-    cout << "You lost the battle. Try again later!" << endl;
+    cout << "Try again later!" << endl;
+  }
+
+  for (int i = 0; i < userTrainer.get_party_size(); ++i) {
+    userTrainer.get_party()[i].heal();
   }
 }
 
@@ -180,13 +190,18 @@ void fightGym3(Trainer& userTrainer, int& badges) {
 
   if (userWon) {
     badges++;
-    cout << "You earned a gym badge! Total badges: " << badges << endl;
+    cout << "You defeated the gym leader and earned a gym badge! Total badges: "
+         << badges << endl;
   } else {
-    cout << "You lost the battle. Try again later!" << endl;
+    cout << "Try again later!" << endl;
+  }
+
+  for (int i = 0; i < userTrainer.get_party_size(); ++i) {
+    userTrainer.get_party()[i].heal();
   }
 }
 
-void fightChampion(Trainer& userTrainer, int& badges) {
+int fightChampion(Trainer& userTrainer, int& badges) {
   Trainer champion("Champion");
   Move HeavySlam("Heavy Slam", "Steel", 30);
   Move DracoMeteor("Draco Meteror", "Dragon", 40);
@@ -201,16 +216,23 @@ void fightChampion(Trainer& userTrainer, int& badges) {
   bool userWon = performBattle(userTrainer, champion);
 
   if (userWon) {
-    badges++;
-    cout << "You earned a gym badge! Total badges: " << badges << endl;
+    cout << "You beat the champion and have become a Pokemon Master! " << endl;
+    return 1;
   } else {
     cout << "Try again later!" << endl;
+    return -1;
+  }
+
+  for (int i = 0; i < userTrainer.get_party_size(); ++i) {
+    userTrainer.get_party()[i].heal();
   }
 }
 
 // Game menu function: guides the user through battle choices and gym badge
 // collection
-void gameMenu(Trainer& userTrainer, int& badges) {
+int gameMenu(Trainer& userTrainer, int& badges) {
+  int win_game = -1;
+  int win_gym = -1;
   while (true) {
     cout << "Game Menu:" << endl;
     cout << "1. Fight Gym 1" << endl;
@@ -237,7 +259,15 @@ void gameMenu(Trainer& userTrainer, int& badges) {
       fightGym3(userTrainer, badges);
       cout << "\n";
     } else if (game_menu_choice == 4) {
-      fightChampion(userTrainer, badges);
+      if (badges < 3) {
+        cout << "You do not have enough badges to fight the champion \n"
+             << endl;
+      } else {
+        if (fightChampion(userTrainer, badges) == 1) {
+          win_game = 1;
+          break;
+        }
+      }
       cout << "\n";
     } else if (game_menu_choice == 5) {
       // Display the number of badges
@@ -249,6 +279,7 @@ void gameMenu(Trainer& userTrainer, int& badges) {
       cout << "Please enter a valid choice.\n" << endl;
     }
   }
+  return win_game;
 }
 
 int main() {
@@ -286,7 +317,6 @@ int main() {
 
   Trainer userTrainer(name);
 
-  int choice_counter = 0;
   while (true) {
     cout << "Main Menu:" << endl;
     cout << "1. Pokedex" << endl;
@@ -304,14 +334,13 @@ int main() {
     } else if (choice == 2) {
       partyMenu(userTrainer, pokedex_thirty);
     } else if (choice == 3) {
-      gameMenu(userTrainer, badges);
-    } else {
-      cout << "Please Enter a Valid Choice (1 or 2)";
-      choice_counter++;
-      if (choice_counter >= 5) {
-        cout << "Ran Out of Tries. Please Restart." << endl;
+      int did_win = gameMenu(userTrainer, badges);
+      if (did_win == 1) {
+        cout << "YOU WON" << endl;
         return 0;
       }
+    } else {
+      cout << "Please Enter a Valid Choice (1, 2, or 3)";
     }
   }
   return 0;

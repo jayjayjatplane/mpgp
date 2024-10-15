@@ -47,7 +47,7 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
       }
     }
     if (!gymLeaderHasPokemonLeft) {
-      cout << "You defeated the Gym Leader!" << endl;
+      cout << "You won!" << endl;
       return true;
     }
 
@@ -64,6 +64,11 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
     int actionChoice;
     cin >> actionChoice;
 
+    if (actionChoice > 2 || actionChoice < 1) {
+      cout << "Invalid choice. Choose again" << endl;
+      continue;
+    }
+
     if (actionChoice == 1) {
       // Attack
       cout << "Choose a move for " << userPokemon->get_species() << ": "
@@ -75,6 +80,11 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
       cin >> moveChoice;
 
       cout << "\n";
+
+      if (moveChoice > 2 || moveChoice < 1) {
+        cout << "Invalid choice. Choose again" << endl;
+        continue;
+      }
 
       // User attacks
       if (moveChoice == 1) {
@@ -118,6 +128,12 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
 
       int switchChoice;
       cin >> switchChoice;
+
+      if (switchChoice < 1 || switchChoice > userTrainer.get_party_size()) {
+        cout << "Invalid choice. Choose again" << endl;
+        continue;
+      }
+
       userPokemonIndex = switchChoice - 1;
       userPokemon = &userTrainer.get_party()[userPokemonIndex];
       cout << "You switched to " << userPokemon->get_species() << "!\n";
