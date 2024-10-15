@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+#include "Limits.h"
 #include "Move.h"
 #include "Pokedex.h"
 #include "Pokemon.h"
@@ -22,8 +23,7 @@ void pokedexMenu(Pokedex pokedex_num) {
     cout << "2. Go Back" << endl;
     cout << "\n";
     cout << "Enter your choice: " << endl;
-    int pokedex_menu_choice;
-    cin >> pokedex_menu_choice;
+    int pokedex_menu_choice = getValidatedChoice();
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
@@ -47,8 +47,7 @@ void addPokemon(Trainer& userTrainer, Pokedex& pokedex) {
   for (int i = 0; i < pokedex.getSize(); ++i) {
     cout << i + 1 << ". " << pokedex.getPokemonByIndex(i).get_species() << endl;
   }
-  int choice;
-  cin >> choice;
+  int choice = getValidatedChoice();
 
   // Add the selected Pokémon to the party
   if (choice > 0 && choice <= pokedex.getSize()) {
@@ -74,8 +73,7 @@ void removePokemon(Trainer& userTrainer) {
   for (int i = 0; i < partySize; ++i) {
     cout << i + 1 << ". " << currentParty[i].get_species() << endl;
   }
-  int choice;
-  cin >> choice;
+  int choice = getValidatedChoice();
 
   // Remove the selected Pokémon
   if (choice > 0 && choice <= partySize) {
@@ -96,8 +94,7 @@ void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
     cout << "3. View Party" << endl;
     cout << "4. Go Back" << endl;
     cout << "\nEnter your choice: ";
-    int party_menu_choice;
-    cin >> party_menu_choice;
+    int party_menu_choice = getValidatedChoice();
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
@@ -243,8 +240,7 @@ int gameMenu(Trainer& userTrainer, int& badges) {
     cout << "6. Go Back" << endl;
     cout << "\n";
     cout << "Enter your choice: " << endl;
-    int game_menu_choice;
-    cin >> game_menu_choice;
+    int game_menu_choice = getValidatedChoice();
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
@@ -323,9 +319,9 @@ int main() {
     cout << "2. Party" << endl;
     cout << "3. Game" << endl;
     cout << "\n";
-    cout << "Enter your choice: " << endl;
-    int choice;
-    cin >> choice;
+
+    int choice = getValidatedChoice();
+
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
