@@ -150,8 +150,11 @@ pokemon/run/CMakeFiles/run.dir/main.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Move.h \
  /home/jayjayjatplane/mpgp/pokemon/game/include/Pokedex.h \
- /home/jayjayjatplane/mpgp/pokemon/game/include/Pokemon.h \
  /home/jayjayjatplane/mpgp/pokemon/game/include/PokemonParty.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Pokemon.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Move.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Pokemon.h \
  /home/jayjayjatplane/mpgp/pokemon/game/include/PokemonParty.h \
  /home/jayjayjatplane/mpgp/pokemon/game/include/Trainer.h

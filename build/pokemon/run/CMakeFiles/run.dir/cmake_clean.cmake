@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/run.dir/main.cpp.o"
-  "CMakeFiles/run.dir/main.cpp.o.d"
+  "CMakeFiles/run.dir/battle_function.cpp.o"
+  "CMakeFiles/run.dir/battle_function.cpp.o.d"
+  "CMakeFiles/run.dir/new_main.cpp.o"
+  "CMakeFiles/run.dir/new_main.cpp.o.d"
+  "CMakeFiles/run.dir/pokemon_storage.cpp.o"
+  "CMakeFiles/run.dir/pokemon_storage.cpp.o.d"
   "run"
   "run.pdb"
 )

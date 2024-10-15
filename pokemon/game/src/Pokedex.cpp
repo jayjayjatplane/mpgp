@@ -9,10 +9,8 @@ Pokedex::Pokedex() {
   pokedex_array = new Pokemon[party_capacity];
 }
 
-Pokedex::Pokedex(int capacity) {
-  pokedex_capacity = 0;
-  pokedex_array = new Pokemon[party_capacity];
-}
+Pokedex::Pokedex(int capacity)
+    : PokemonParty(capacity), pokedex_capacity(capacity) {}
 
 void Pokedex::display_pokedex() {
   if (party_array == nullptr) {
@@ -28,7 +26,11 @@ void Pokedex::display_pokedex() {
     cout << " Species: " << party_array[i].get_species() << " | ";
     cout << " Type: " << party_array[i].get_type() << " | ";
     cout << " Health: " << party_array[i].get_health() << " | ";
-    cout << " Moveset: " << party_array[i].get_moveset() << endl;
+    // Displaying Move information
+    Move moveset = party_array[i].get_moveset();
+    cout << " Moveset: " << moveset.get_move_name()
+         << " (Type: " << moveset.get_move_type()
+         << ", Damage: " << moveset.get_damage() << ")" << endl;
     cout << "\n";
   }
 }
@@ -45,4 +47,8 @@ void Pokedex::add_pokemon_to_pokedex(Pokemon pokemon) {
   }
 }
 
-Pokedex::~Pokedex() { delete[] party_array; }
+int Pokedex::getSize() { return getPartySize(); }
+
+Pokemon Pokedex::getPokemonByIndex(int index) { return getPokemonAt(index); }
+
+Pokedex::~Pokedex() {}

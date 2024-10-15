@@ -69,10 +69,24 @@ include pokemon/game/CMakeFiles/game.dir/progress.make
 # Include the compile flags for this target's objects.
 include pokemon/game/CMakeFiles/game.dir/flags.make
 
+pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o: pokemon/game/CMakeFiles/game.dir/flags.make
+pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o: /home/jayjayjatplane/mpgp/pokemon/game/src/Move.cpp
+pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o: pokemon/game/CMakeFiles/game.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o"
+	cd /home/jayjayjatplane/mpgp/build/pokemon/game && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o -MF CMakeFiles/game.dir/src/Move.cpp.o.d -o CMakeFiles/game.dir/src/Move.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Move.cpp
+
+pokemon/game/CMakeFiles/game.dir/src/Move.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Move.cpp.i"
+	cd /home/jayjayjatplane/mpgp/build/pokemon/game && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jayjayjatplane/mpgp/pokemon/game/src/Move.cpp > CMakeFiles/game.dir/src/Move.cpp.i
+
+pokemon/game/CMakeFiles/game.dir/src/Move.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Move.cpp.s"
+	cd /home/jayjayjatplane/mpgp/build/pokemon/game && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jayjayjatplane/mpgp/pokemon/game/src/Move.cpp -o CMakeFiles/game.dir/src/Move.cpp.s
+
 pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o: pokemon/game/CMakeFiles/game.dir/flags.make
 pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o: /home/jayjayjatplane/mpgp/pokemon/game/src/Pokedex.cpp
 pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o: pokemon/game/CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o"
 	cd /home/jayjayjatplane/mpgp/build/pokemon/game && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o -MF CMakeFiles/game.dir/src/Pokedex.cpp.o.d -o CMakeFiles/game.dir/src/Pokedex.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Pokedex.cpp
 
 pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.i: cmake_force
@@ -86,7 +100,7 @@ pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.s: cmake_force
 pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.o: pokemon/game/CMakeFiles/game.dir/flags.make
 pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.o: /home/jayjayjatplane/mpgp/pokemon/game/src/Pokemon.cpp
 pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.o: pokemon/game/CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.o"
 	cd /home/jayjayjatplane/mpgp/build/pokemon/game && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.o -MF CMakeFiles/game.dir/src/Pokemon.cpp.o.d -o CMakeFiles/game.dir/src/Pokemon.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Pokemon.cpp
 
 pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.i: cmake_force
@@ -100,7 +114,7 @@ pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.s: cmake_force
 pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o: pokemon/game/CMakeFiles/game.dir/flags.make
 pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o: /home/jayjayjatplane/mpgp/pokemon/game/src/PokemonParty.cpp
 pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o: pokemon/game/CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o"
 	cd /home/jayjayjatplane/mpgp/build/pokemon/game && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o -MF CMakeFiles/game.dir/src/PokemonParty.cpp.o.d -o CMakeFiles/game.dir/src/PokemonParty.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/PokemonParty.cpp
 
 pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.i: cmake_force
@@ -114,7 +128,7 @@ pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.s: cmake_force
 pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o: pokemon/game/CMakeFiles/game.dir/flags.make
 pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o: /home/jayjayjatplane/mpgp/pokemon/game/src/Trainer.cpp
 pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o: pokemon/game/CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o"
 	cd /home/jayjayjatplane/mpgp/build/pokemon/game && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o -MF CMakeFiles/game.dir/src/Trainer.cpp.o.d -o CMakeFiles/game.dir/src/Trainer.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Trainer.cpp
 
 pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.i: cmake_force
@@ -127,6 +141,7 @@ pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.s: cmake_force
 
 # Object files for target game
 game_OBJECTS = \
+"CMakeFiles/game.dir/src/Move.cpp.o" \
 "CMakeFiles/game.dir/src/Pokedex.cpp.o" \
 "CMakeFiles/game.dir/src/Pokemon.cpp.o" \
 "CMakeFiles/game.dir/src/PokemonParty.cpp.o" \
@@ -135,13 +150,14 @@ game_OBJECTS = \
 # External object files for target game
 game_EXTERNAL_OBJECTS =
 
+pokemon/game/libgame.a: pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o
 pokemon/game/libgame.a: pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o
 pokemon/game/libgame.a: pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.o
 pokemon/game/libgame.a: pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o
 pokemon/game/libgame.a: pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o
 pokemon/game/libgame.a: pokemon/game/CMakeFiles/game.dir/build.make
 pokemon/game/libgame.a: pokemon/game/CMakeFiles/game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libgame.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libgame.a"
 	cd /home/jayjayjatplane/mpgp/build/pokemon/game && $(CMAKE_COMMAND) -P CMakeFiles/game.dir/cmake_clean_target.cmake
 	cd /home/jayjayjatplane/mpgp/build/pokemon/game && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.dir/link.txt --verbose=$(VERBOSE)
 

@@ -19,12 +19,17 @@ class PokemonParty {
   PokemonParty(int capacity);
 
   // Functions
-  virtual void display_party();
-  virtual void add_pokemon_to_party(Pokemon pokemon);
-  virtual void rem_pokemon_from_party(Pokemon pokemon);
+  void display_party();
+  void add_pokemon_to_party(Pokemon pokemon);
+  void rem_pokemon_from_party(Pokemon pokemon);
 
   void add_pokemon();
   void display_pokemon_list();
+
+  // get and set
+  Pokemon getPokemonAt(int index);
+  Pokemon* getParty();
+  int getPartySize();
 
   // Destructors
   ~PokemonParty();

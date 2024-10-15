@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/game.dir/src/Move.cpp.o"
+  "CMakeFiles/game.dir/src/Move.cpp.o.d"
   "CMakeFiles/game.dir/src/Pokedex.cpp.o"
   "CMakeFiles/game.dir/src/Pokedex.cpp.o.d"
   "CMakeFiles/game.dir/src/Pokemon.cpp.o"

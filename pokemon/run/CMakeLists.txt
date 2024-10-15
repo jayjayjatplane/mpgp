@@ -4,7 +4,9 @@ add_executable(run)
 # Add source files to the 'executable' target
 target_sources(run
     PRIVATE
-        main.cpp
+        battle_function.cpp    
+        new_main.cpp
+        pokemon_storage.cpp
 )
 
 # Link with the game library

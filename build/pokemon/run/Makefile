@@ -140,29 +140,77 @@ run/fast:
 	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/build
 .PHONY : run/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+battle_function.o: battle_function.cpp.o
+.PHONY : battle_function.o
 
 # target to build an object file
-main.cpp.o:
-	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/main.cpp.o
-.PHONY : main.cpp.o
+battle_function.cpp.o:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o
+.PHONY : battle_function.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+battle_function.i: battle_function.cpp.i
+.PHONY : battle_function.i
 
 # target to preprocess a source file
-main.cpp.i:
-	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/main.cpp.i
-.PHONY : main.cpp.i
+battle_function.cpp.i:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/battle_function.cpp.i
+.PHONY : battle_function.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+battle_function.s: battle_function.cpp.s
+.PHONY : battle_function.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/main.cpp.s
-.PHONY : main.cpp.s
+battle_function.cpp.s:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/battle_function.cpp.s
+.PHONY : battle_function.cpp.s
+
+new_main.o: new_main.cpp.o
+.PHONY : new_main.o
+
+# target to build an object file
+new_main.cpp.o:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/new_main.cpp.o
+.PHONY : new_main.cpp.o
+
+new_main.i: new_main.cpp.i
+.PHONY : new_main.i
+
+# target to preprocess a source file
+new_main.cpp.i:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/new_main.cpp.i
+.PHONY : new_main.cpp.i
+
+new_main.s: new_main.cpp.s
+.PHONY : new_main.s
+
+# target to generate assembly for a file
+new_main.cpp.s:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/new_main.cpp.s
+.PHONY : new_main.cpp.s
+
+pokemon_storage.o: pokemon_storage.cpp.o
+.PHONY : pokemon_storage.o
+
+# target to build an object file
+pokemon_storage.cpp.o:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o
+.PHONY : pokemon_storage.cpp.o
+
+pokemon_storage.i: pokemon_storage.cpp.i
+.PHONY : pokemon_storage.i
+
+# target to preprocess a source file
+pokemon_storage.cpp.i:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.i
+.PHONY : pokemon_storage.cpp.i
+
+pokemon_storage.s: pokemon_storage.cpp.s
+.PHONY : pokemon_storage.s
+
+# target to generate assembly for a file
+pokemon_storage.cpp.s:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.s
+.PHONY : pokemon_storage.cpp.s
 
 # Help Target
 help:
@@ -174,9 +222,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... run"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... battle_function.o"
+	@echo "... battle_function.i"
+	@echo "... battle_function.s"
+	@echo "... new_main.o"
+	@echo "... new_main.i"
+	@echo "... new_main.s"
+	@echo "... pokemon_storage.o"
+	@echo "... pokemon_storage.i"
+	@echo "... pokemon_storage.s"
 .PHONY : help
 
 

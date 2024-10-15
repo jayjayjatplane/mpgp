@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/Move.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Move.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/Move.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
   "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/Pokedex.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Pokedex.cpp",
   "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/Pokedex.cpp",
   "output": "pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o"
@@ -25,8 +31,20 @@
 },
 {
   "directory": "/home/jayjayjatplane/mpgp/build/pokemon/run",
-  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/run.dir/main.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/main.cpp",
-  "file": "/home/jayjayjatplane/mpgp/pokemon/run/main.cpp",
-  "output": "pokemon/run/CMakeFiles/run.dir/main.cpp.o"
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/run.dir/battle_function.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp",
+  "output": "pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/run",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/run.dir/new_main.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp",
+  "output": "pokemon/run/CMakeFiles/run.dir/new_main.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/run",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/run.dir/pokemon_storage.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp",
+  "output": "pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o"
 }
 ]

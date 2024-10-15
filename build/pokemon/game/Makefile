@@ -140,6 +140,30 @@ game/fast:
 	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/build
 .PHONY : game/fast
 
+src/Move.o: src/Move.cpp.o
+.PHONY : src/Move.o
+
+# target to build an object file
+src/Move.cpp.o:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o
+.PHONY : src/Move.cpp.o
+
+src/Move.i: src/Move.cpp.i
+.PHONY : src/Move.i
+
+# target to preprocess a source file
+src/Move.cpp.i:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Move.cpp.i
+.PHONY : src/Move.cpp.i
+
+src/Move.s: src/Move.cpp.s
+.PHONY : src/Move.s
+
+# target to generate assembly for a file
+src/Move.cpp.s:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Move.cpp.s
+.PHONY : src/Move.cpp.s
+
 src/Pokedex.o: src/Pokedex.cpp.o
 .PHONY : src/Pokedex.o
 
@@ -246,6 +270,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... game"
+	@echo "... src/Move.o"
+	@echo "... src/Move.i"
+	@echo "... src/Move.s"
 	@echo "... src/Pokedex.o"
 	@echo "... src/Pokedex.i"
 	@echo "... src/Pokedex.s"

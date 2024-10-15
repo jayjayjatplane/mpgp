@@ -1,10 +1,7 @@
-pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o: \
- /home/jayjayjatplane/mpgp/pokemon/game/src/Pokedex.cpp \
- /usr/include/stdc-predef.h \
- /home/jayjayjatplane/mpgp/pokemon/game/include/Pokedex.h \
- /home/jayjayjatplane/mpgp/pokemon/game/include/PokemonParty.h \
- /home/jayjayjatplane/mpgp/pokemon/game/include/Pokemon.h \
- /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
+pokemon/run/CMakeFiles/run.dir/new_main.cpp.o: \
+ /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
+ /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -153,4 +150,11 @@ pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/jayjayjatplane/mpgp/pokemon/game/include/Move.h
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Move.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Pokedex.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/PokemonParty.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Pokemon.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Move.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Pokemon.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/PokemonParty.h \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Trainer.h

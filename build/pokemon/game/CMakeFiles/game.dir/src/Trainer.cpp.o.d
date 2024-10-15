@@ -154,6 +154,7 @@ pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
+ /home/jayjayjatplane/mpgp/pokemon/game/include/Move.h \
  /home/jayjayjatplane/mpgp/pokemon/game/include/PokemonParty.h \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -178,6 +179,5 @@ pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/jayjayjatplane/mpgp/pokemon/game/include/Pokedex.h \
  /home/jayjayjatplane/mpgp/pokemon/game/include/Pokemon.h \
  /home/jayjayjatplane/mpgp/pokemon/game/include/PokemonParty.h

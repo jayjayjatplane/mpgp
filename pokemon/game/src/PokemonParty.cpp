@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "Move.h"
+
 using namespace std;
 
 // Constructors
@@ -42,7 +44,8 @@ void PokemonParty::rem_pokemon_from_party(Pokemon pokemon) {
     if (party_array[i].get_species() == pokemon.get_species() &&
         party_array[i].get_type() == pokemon.get_type() &&
         party_array[i].get_health() == pokemon.get_health() &&
-        party_array[i].get_moveset() == pokemon.get_moveset()) {
+        party_array[i].get_moveset().get_move_name() ==
+            pokemon.get_moveset().get_move_name()) {
       for (int j = i; j < party_size - 1; j++) {
         party_array[j] = party_array[j + 1];
       }
@@ -55,22 +58,46 @@ void PokemonParty::rem_pokemon_from_party(Pokemon pokemon) {
 }
 
 void PokemonParty::add_pokemon() {
-  string species, type, moveset;
-  int health;
+  string species, type, move_name, move_type;
+  int health, move_damage;
   cout << "Enter Pokemon species: ";
   cin >> species;
   cout << "Enter Pokemon type: ";
   cin >> type;
   cout << "Enter Pokemon health: ";
   cin >> health;
-  cout << "Enter Pokemon moveset: ";
-  cin >> moveset;
+
+  // Handling Move object input
+  cout << "Enter move name: ";
+  cin >> move_name;
+  cout << "Enter move type: ";
+  cin >> move_type;
+  cout << "Enter move damage: ";
+  cin >> move_damage;
+
+  // Create the Move object
+  Move moveset(move_name, move_type, move_damage);
+
   Pokemon new_pokemon(species, type, health, moveset);
   add_pokemon_to_party(new_pokemon);
   cout << "Pokemon added!" << endl;
 }
 
 void PokemonParty::display_pokemon_list() { display_party(); }
+
+// Getter functions
+int PokemonParty::getPartySize() { return party_size; }
+
+Pokemon* PokemonParty::getParty() { return party_array; }
+
+Pokemon PokemonParty::getPokemonAt(int index) {
+  if (index >= 0 && index < party_size) {
+    return party_array[index];
+  }
+  // Handle invalid index
+  return Pokemon();  // Return default-constructed Pokemon if index is out of
+                     // bounds
+}
 
 // Destructors
 PokemonParty::~PokemonParty() { delete[] party_array; }

@@ -4,6 +4,7 @@ add_library(game)
 # Add source files to the 'game' target
 target_sources(game
     PRIVATE
+        src/Move.cpp
         src/Pokedex.cpp
         src/Pokemon.cpp
         src/PokemonParty.cpp
