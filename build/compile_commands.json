@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/Move.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Move.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/Move.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/Move.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/Pokedex.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Pokedex.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/Pokedex.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/Pokedex.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/Pokemon.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Pokemon.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/Pokemon.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/Pokemon.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/PokemonParty.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/PokemonParty.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/PokemonParty.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/PokemonParty.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/Trainer.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Trainer.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/Trainer.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/Trainer.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/Limits.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/Limits.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/Limits.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/Limits.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/game",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/game.dir/src/HealMove.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/game/src/HealMove.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/game/src/HealMove.cpp",
+  "output": "pokemon/game/CMakeFiles/game.dir/src/HealMove.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/run",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/run.dir/battle_function.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/run/battle_function.cpp",
+  "output": "pokemon/run/CMakeFiles/run.dir/battle_function.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/run",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/run.dir/new_main.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/run/new_main.cpp",
+  "output": "pokemon/run/CMakeFiles/run.dir/new_main.cpp.o"
+},
+{
+  "directory": "/home/jayjayjatplane/mpgp/build/pokemon/run",
+  "command": "/usr/bin/g++  -I/home/jayjayjatplane/mpgp/pokemon/game/include -g -std=c++17 -o CMakeFiles/run.dir/pokemon_storage.cpp.o -c /home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp",
+  "file": "/home/jayjayjatplane/mpgp/pokemon/run/pokemon_storage.cpp",
+  "output": "pokemon/run/CMakeFiles/run.dir/pokemon_storage.cpp.o"
+}
+]

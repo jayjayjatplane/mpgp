@@ -9,6 +9,8 @@ target_sources(game
         src/Pokemon.cpp
         src/PokemonParty.cpp
         src/Trainer.cpp
+        src/Limits.cpp
+        src/HealMove.cpp
 )
 
 # Include directories for the 'game' target

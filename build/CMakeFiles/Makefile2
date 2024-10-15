@@ -132,12 +132,12 @@ tests/clean:
 pokemon/game/CMakeFiles/game.dir/all:
 	$(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/depend
 	$(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target game"
 .PHONY : pokemon/game/CMakeFiles/game.dir/all
 
 # Build rule for subdir invocation for target.
 pokemon/game/CMakeFiles/game.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jayjayjatplane/mpgp/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jayjayjatplane/mpgp/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pokemon/game/CMakeFiles/game.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jayjayjatplane/mpgp/build/CMakeFiles 0
 .PHONY : pokemon/game/CMakeFiles/game.dir/rule
@@ -158,12 +158,12 @@ pokemon/game/CMakeFiles/game.dir/clean:
 pokemon/run/CMakeFiles/run.dir/all: pokemon/game/CMakeFiles/game.dir/all
 	$(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/depend
 	$(MAKE) $(MAKESILENT) -f pokemon/run/CMakeFiles/run.dir/build.make pokemon/run/CMakeFiles/run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=7,8,9,10 "Built target run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jayjayjatplane/mpgp/build/CMakeFiles --progress-num=9,10,11,12 "Built target run"
 .PHONY : pokemon/run/CMakeFiles/run.dir/all
 
 # Build rule for subdir invocation for target.
 pokemon/run/CMakeFiles/run.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jayjayjatplane/mpgp/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jayjayjatplane/mpgp/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pokemon/run/CMakeFiles/run.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jayjayjatplane/mpgp/build/CMakeFiles 0
 .PHONY : pokemon/run/CMakeFiles/run.dir/rule

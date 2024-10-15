@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/game.dir/src/HealMove.cpp.o"
+  "CMakeFiles/game.dir/src/HealMove.cpp.o.d"
+  "CMakeFiles/game.dir/src/Limits.cpp.o"
+  "CMakeFiles/game.dir/src/Limits.cpp.o.d"
   "CMakeFiles/game.dir/src/Move.cpp.o"
   "CMakeFiles/game.dir/src/Move.cpp.o.d"
   "CMakeFiles/game.dir/src/Pokedex.cpp.o"

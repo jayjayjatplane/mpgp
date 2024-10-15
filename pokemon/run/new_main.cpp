@@ -9,7 +9,7 @@
 #include "PokemonParty.h"
 #include "Trainer.h"
 
-// functions outside of this file to keep organised
+// Function declarations for external functions
 extern bool performBattle(Trainer& userTrainer, Trainer& gymLeader);
 extern void initializePokedex(Pokedex& pokedex);
 
@@ -44,73 +44,114 @@ void loadGame(string& trainerName, int& badgeCount) {
   }
 }
 
-// Pokedex menu function: guides the user through options of the pokedex
+/**
+ * Displays the Pokedex menu and guides the user through options.
+ *
+ * Functions:
+ * Presents the user with a menu to either display the Pokedex OR
+ * Return to the previous menu.
+ * It continues to prompt the user for input until a valid choice is made.
+ */
 void pokedexMenu(Pokedex pokedex_num) {
+  // Display the Pokedex menu
   cout << "\n";
   while (true) {
+    // Display menu options
     cout << "POKEDEX MENU:" << endl;
     cout << "1. Display Pokedex" << endl;
     cout << "2. Go Back" << endl;
     cout << "\n";
-    cout << "Enter your choice: " << endl;
+
+    // Prompt the user for input
     int pokedex_menu_choice = getValidatedChoice();
+
+    // Clear the screen
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
 
+    // Handle user input
     if (pokedex_menu_choice == 1) {
+      // Display the Pokedex
       pokedex_num.display_pokedex();
       cout << "\n";
     } else if (pokedex_menu_choice == 2) {
+      // Return to the previous menu
       cout << "\n";
       break;
     } else {
+      // Handle invalid input
       cout << "Please enter a valid choice.\n" << endl;
     }
   }
 }
 
-// function that allows trainer to add pokemon from the pokedex by number
+/**
+ * Allows the trainer to add a Pokemon from the Pokedex to their party.
+ *
+ * Functions:
+ * Displays a list of available Pokemon
+ * Prompts the user to select one
+ * Adds it to their party if there is space available
+ */
 void addPokemon(Trainer& userTrainer, Pokedex& pokedex) {
-  // Display the list of Pokémon the player can choose from
-  cout << "Select a Pokémon to add to your party:" << endl;
+  // Display the list of Pokemon the player can choose from
+  cout << "Select a Pokemon to add to your party:" << endl;
   for (int i = 0; i < pokedex.getSize(); ++i) {
     cout << i + 1 << ". " << pokedex.getPokemonByIndex(i).get_species() << endl;
   }
+
+  // Get the user's choice
   int choice = getValidatedChoice();
 
-  // Add the selected Pokémon to the party
+  // Validate the user's choice and add the Pokemon to the party if possible
   if (choice > 0 && choice <= pokedex.getSize()) {
-    if (userTrainer.get_party_size() < 3) {  // Maximum party size of 3
-      userTrainer.addPokemonToParty(
-          pokedex.getPokemonByIndex(choice - 1));  // Add from Pokedex
+    // Check if the party is not full
+    if (userTrainer.get_party_size() < 3) {
+      // Add the selected Pokemon to the party
+      userTrainer.addPokemonToParty(pokedex.getPokemonByIndex(choice - 1));
       cout << pokedex.getPokemonByIndex(choice - 1).get_species()
            << " added to your party!" << endl;
     } else {
+      // Handle a full party
       cout << "Your party is full!" << endl;
     }
   } else {
+    // Handle an invalid choice
     cout << "Invalid choice!" << endl;
   }
 }
 
-// function that allows the trainer to remove pokemon from their party
+/**
+ * Allows the trainer to remove a Pokemon from their party.
+ *
+ * Functions:
+ * Displays the trainer's current party
+ * Prompts the user to select a Pokemon
+ * Removes it from the party if the choice is valid.
+ */
 void removePokemon(Trainer& userTrainer) {
-  cout << "Select a Pokémon to remove from your party:" << endl;
+  // Display the trainer's current party
+  cout << "Select a Pokemon to remove from your party:" << endl;
   int partySize = userTrainer.get_party_size();
   Pokemon* currentParty = userTrainer.get_party();
 
+  // List the Pokemon in the party
   for (int i = 0; i < partySize; ++i) {
     cout << i + 1 << ". " << currentParty[i].get_species() << endl;
   }
+
+  // Get the user's choice
   int choice = getValidatedChoice();
 
-  // Remove the selected Pokémon
+  // Validate the user's choice and remove the Pokemon from the party
   if (choice > 0 && choice <= partySize) {
+    // Remove the selected Pokemon
     cout << currentParty[choice - 1].get_species()
          << " removed from your party!" << endl;
     userTrainer.removePokemonFromParty(currentParty[choice - 1]);
   } else {
+    // Handle an invalid choice
     cout << "Invalid choice!" << endl;
   }
 }
@@ -118,12 +159,13 @@ void removePokemon(Trainer& userTrainer) {
 // Pokemon Party menu function: guides the user through choice of pokemon teams
 void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
   while (true) {
+    // Display the Pokemon Party menu
     cout << "POKEMON PARTY MENU:" << endl;
     cout << "1. Add Pokemon" << endl;
     cout << "2. Remove Pokemon" << endl;
     cout << "3. View Party" << endl;
     cout << "4. Go Back" << endl;
-    cout << "\nEnter your choice: ";
+    cout << "\n";
     int party_menu_choice = getValidatedChoice();
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -146,8 +188,17 @@ void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
     }
   }
 }
-
+/**
+ * Simulates a battle against the first Gym Leader and awards a badge if the
+ * user wins.
+ *
+ * Functions:
+ * Creates the Gym Leader's team
+ * Performs the battle
+ * Updates the user's badge count
+ */
 void fightGym1(Trainer& userTrainer, int& badges) {
+  // Create the Gym Leader and their Pokemon
   Trainer gymLeader1("Gym Leader 1");
   Move RapidSpin("Rapid Spin", "Water", 25);
   Move WaterShuriken("Water Shuriken", "Water", 30);
@@ -159,8 +210,10 @@ void fightGym1(Trainer& userTrainer, int& badges) {
   gymLeader1.addPokemonToParty(Greninja);
   gymLeader1.addPokemonToParty(Suicune);
 
+  // Perform the battle
   bool userWon = performBattle(userTrainer, gymLeader1);
 
+  // Update the user's badge count and display the result
   if (userWon) {
     badges++;
     cout << "You defeated the gym leader and earned a gym badge! Total badges: "
@@ -169,12 +222,23 @@ void fightGym1(Trainer& userTrainer, int& badges) {
     cout << "Try again later!" << endl;
   }
 
+  // Heal the user's Pokemon after the battle
   for (int i = 0; i < userTrainer.get_party_size(); ++i) {
     userTrainer.get_party()[i].heal();
   }
 }
 
+/**
+ * Simulates a battle against the second Gym Leader and awards a badge if the
+ * user wins.
+ *
+ * Functions:
+ * Creates the Gym Leader's team
+ * Performs the battle
+ * Updates the user's badge count
+ */
 void fightGym2(Trainer& userTrainer, int& badges) {
+  // Create the Gym Leader and their Pokemon
   Trainer gymLeader2("Gym Leader 2");
   Move FireSpin("Fire Spin", "Fire", 20);
   Move Inferno("Inferno", "Fire", 35);
@@ -186,8 +250,10 @@ void fightGym2(Trainer& userTrainer, int& badges) {
   gymLeader2.addPokemonToParty(Infernape);
   gymLeader2.addPokemonToParty(Entei);
 
+  // Perform the battle
   bool userWon = performBattle(userTrainer, gymLeader2);
 
+  // Update the user's badge count and display the result
   if (userWon) {
     badges++;
     cout << "You defeated the gym leader and earned a gym badge! Total badges: "
@@ -196,12 +262,23 @@ void fightGym2(Trainer& userTrainer, int& badges) {
     cout << "Try again later!" << endl;
   }
 
+  // Heal the user's Pokemon after the battle
   for (int i = 0; i < userTrainer.get_party_size(); ++i) {
     userTrainer.get_party()[i].heal();
   }
 }
 
+/**
+ * Simulates a battle against the third Gym Leader and awards a badge if the
+ * user wins.
+ *
+ * Functions:
+ * Creates the Gym Leader's team
+ * Performs the battle
+ * Updates the user's badge count
+ */
 void fightGym3(Trainer& userTrainer, int& badges) {
+  // Create the Gym Leader and their Pokemon
   Trainer gymLeader3("Gym Leader 3");
   Move Shockwave("Shockwave", "Electric", 25);
   Move VoltTackle("Volt Tackle", "Electric", 50);
@@ -213,8 +290,10 @@ void fightGym3(Trainer& userTrainer, int& badges) {
   gymLeader3.addPokemonToParty(Pikachu);
   gymLeader3.addPokemonToParty(Raikou);
 
+  // Perform the battle
   bool userWon = performBattle(userTrainer, gymLeader3);
 
+  // Update the user's badge count and display the result
   if (userWon) {
     badges++;
     cout << "You defeated the gym leader and earned a gym badge! Total badges: "
@@ -223,12 +302,23 @@ void fightGym3(Trainer& userTrainer, int& badges) {
     cout << "Try again later!" << endl;
   }
 
+  // Heal the user's Pokemon after the battle
   for (int i = 0; i < userTrainer.get_party_size(); ++i) {
     userTrainer.get_party()[i].heal();
   }
 }
-
+/**
+ * Simulates a battle against the Pokemon Champion and determines if the user
+ * becomes a Pokemon Master.
+ *
+ * Functions:
+ * Creates the Champion's team
+ * Performs the battle
+ * Display results
+ *
+ */
 int fightChampion(Trainer& userTrainer, int& badges) {
+  // Create the Champion and their Pokemon
   Trainer champion("Champion");
   Move HeavySlam("Heavy Slam", "Steel", 30);
   Move DracoMeteor("Draco Meteror", "Dragon", 40);
@@ -240,12 +330,15 @@ int fightChampion(Trainer& userTrainer, int& badges) {
   champion.addPokemonToParty(Dragonite);
   champion.addPokemonToParty(Hooh);
 
+  // Perform the battle
   bool userWon = performBattle(userTrainer, champion);
 
+  // Heal the user's Pokemon after the battle
   for (int i = 0; i < userTrainer.get_party_size(); ++i) {
     userTrainer.get_party()[i].heal();
   }
 
+  // Display the result
   if (userWon) {
     cout << "You beat the champion and have become a Pokemon Master! " << endl;
     return 1;
@@ -255,12 +348,21 @@ int fightChampion(Trainer& userTrainer, int& badges) {
   }
 }
 
-// Game menu function: guides the user through battle choices and gym badge
-// collection
+/**
+ * Displays the game menu and guides the user through battle choices and gym
+ * badge collection.
+ *
+ * Functions:
+ * Repeatedly displays the game menu
+ * Processes the user's choice
+ * Updates the game state
+ *
+ */
 int gameMenu(Trainer& userTrainer, int& badges) {
   int win_game = -1;
   int win_gym = -1;
   while (true) {
+    // Display the game menu
     cout << "Game Menu:" << endl;
     cout << "1. Fight Gym 1" << endl;
     cout << "2. Fight Gym 2" << endl;
@@ -269,12 +371,12 @@ int gameMenu(Trainer& userTrainer, int& badges) {
     cout << "5. Display Badges" << endl;
     cout << "6. Go Back" << endl;
     cout << "\n";
-    cout << "Enter your choice: " << endl;
     int game_menu_choice = getValidatedChoice();
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
 
+    // Process the user's choice
     if (game_menu_choice == 1) {
       fightGym1(userTrainer, badges);
       cout << "\n";
@@ -308,15 +410,25 @@ int gameMenu(Trainer& userTrainer, int& badges) {
   return win_game;
 }
 
+/**
+ * The main entry point of the Joshymon game.
+ *
+ * Functions:
+ * Initializes the game,
+ * Displays the main menu, and processes the
+ * User's choices.
+ *
+ */
 int main() {
-  // Create a Pokedex instance
+  // Create a Pokedex instance with a capacity of 30
   Pokedex pokedex_thirty(30);
 
   int badges = 0;
 
-  // Initialize the Pokédex with Pokémon and moves
+  // Initialize the Pokedex with Pokemon and moves
   initializePokedex(pokedex_thirty);
 
+  // Clear the screen and display the game introduction
   cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
           "\n\n\n\n\n";
   string name = "";
@@ -341,16 +453,19 @@ int main() {
        << endl;
   cout << "Hi Trainer " << name << "! " << endl;
 
+  // Create a Trainer instance with the user's name
   Trainer userTrainer(name);
 
+  // Main game loop
   while (true) {
+    // Display the main menu
     cout << "Main Menu:" << endl;
     cout << "1. Pokedex" << endl;
     cout << "2. Party" << endl;
     cout << "3. Game" << endl;
     cout << "4. Save Game" << endl;
     cout << "5. Load Game" << endl;
-    cout << "6. Quit" << endl;
+
     cout << "\n";
 
     int choice = getValidatedChoice();
@@ -358,6 +473,8 @@ int main() {
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
+
+    // Process the user's choice
     if (choice == 1) {
       pokedexMenu(pokedex_thirty);
     } else if (choice == 2) {
@@ -365,7 +482,7 @@ int main() {
     } else if (choice == 3) {
       int did_win = gameMenu(userTrainer, badges);
       if (did_win == 1) {
-        cout << "YOU WON" << endl;
+        cout << "The Game has ended. Thanks for playing!" << endl;
         return 0;
       }
     } else if (choice == 4) {
@@ -376,10 +493,8 @@ int main() {
           name);  // Assuming Trainer class has a setName method
       cout << "Trainer Name: " << name << ", Badges: " << badges
            << endl;  // Display loaded info
-    } else if (choice == 6) {
-      break;
     } else {
-      cout << "Please Enter a Valid Choice (1, 2, 3, 4, 5, or 6)\n";
+      cout << "Please Enter a Valid Choice (1, 2, 3, 4, or 5)\n";
     }
   }
   return 0;

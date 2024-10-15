@@ -140,6 +140,54 @@ game/fast:
 	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/build
 .PHONY : game/fast
 
+src/HealMove.o: src/HealMove.cpp.o
+.PHONY : src/HealMove.o
+
+# target to build an object file
+src/HealMove.cpp.o:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/HealMove.cpp.o
+.PHONY : src/HealMove.cpp.o
+
+src/HealMove.i: src/HealMove.cpp.i
+.PHONY : src/HealMove.i
+
+# target to preprocess a source file
+src/HealMove.cpp.i:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/HealMove.cpp.i
+.PHONY : src/HealMove.cpp.i
+
+src/HealMove.s: src/HealMove.cpp.s
+.PHONY : src/HealMove.s
+
+# target to generate assembly for a file
+src/HealMove.cpp.s:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/HealMove.cpp.s
+.PHONY : src/HealMove.cpp.s
+
+src/Limits.o: src/Limits.cpp.o
+.PHONY : src/Limits.o
+
+# target to build an object file
+src/Limits.cpp.o:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Limits.cpp.o
+.PHONY : src/Limits.cpp.o
+
+src/Limits.i: src/Limits.cpp.i
+.PHONY : src/Limits.i
+
+# target to preprocess a source file
+src/Limits.cpp.i:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Limits.cpp.i
+.PHONY : src/Limits.cpp.i
+
+src/Limits.s: src/Limits.cpp.s
+.PHONY : src/Limits.s
+
+# target to generate assembly for a file
+src/Limits.cpp.s:
+	cd /home/jayjayjatplane/mpgp/build && $(MAKE) $(MAKESILENT) -f pokemon/game/CMakeFiles/game.dir/build.make pokemon/game/CMakeFiles/game.dir/src/Limits.cpp.s
+.PHONY : src/Limits.cpp.s
+
 src/Move.o: src/Move.cpp.o
 .PHONY : src/Move.o
 
@@ -270,6 +318,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... game"
+	@echo "... src/HealMove.o"
+	@echo "... src/HealMove.i"
+	@echo "... src/HealMove.s"
+	@echo "... src/Limits.o"
+	@echo "... src/Limits.i"
+	@echo "... src/Limits.s"
 	@echo "... src/Move.o"
 	@echo "... src/Move.i"
 	@echo "... src/Move.s"
