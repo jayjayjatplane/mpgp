@@ -18,7 +18,7 @@ string Trainer::get_name() { return name; }
 
 Pokemon* Trainer::get_party() { return party; }
 
-void Trainer::set_name(string new_name) { name = new_name; }
+void Trainer::set_name(string& trainerName) { name = trainerName; }
 
 int Trainer::get_party_size() { return party_size; }
 

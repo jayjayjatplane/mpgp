@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <string>
 
@@ -13,6 +14,35 @@ extern bool performBattle(Trainer& userTrainer, Trainer& gymLeader);
 extern void initializePokedex(Pokedex& pokedex);
 
 using namespace std;
+
+// save functions
+void saveGame(string& trainerName, int badgeCount) {
+  ofstream outFile(
+      "save_game.txt");  // Open or create a file named "save_game.txt"
+
+  if (outFile.is_open()) {
+    outFile << trainerName << std::endl;  // Write the trainer name
+    outFile << badgeCount << std::endl;   // Write the badge count
+    outFile.close();                      // Close the file
+    cout << "Game saved successfully!" << std::endl;
+  } else {
+    cerr << "Error saving the game!" << std::endl;
+  }
+}
+
+// load save
+void loadGame(string& trainerName, int& badgeCount) {
+  ifstream inFile("save_game.txt");  // Open the same file
+
+  if (inFile.is_open()) {
+    getline(inFile, trainerName);  // Read the trainer name
+    inFile >> badgeCount;          // Read the badge count
+    inFile.close();                // Close the file
+    cout << "Game loaded successfully!" << std::endl;
+  } else {
+    cerr << "Error loading the game!" << std::endl;
+  }
+}
 
 // Pokedex menu function: guides the user through options of the pokedex
 void pokedexMenu(Pokedex pokedex_num) {
@@ -318,6 +348,9 @@ int main() {
     cout << "1. Pokedex" << endl;
     cout << "2. Party" << endl;
     cout << "3. Game" << endl;
+    cout << "4. Save Game" << endl;
+    cout << "5. Load Game" << endl;
+    cout << "6. Quit" << endl;
     cout << "\n";
 
     int choice = getValidatedChoice();
@@ -335,8 +368,18 @@ int main() {
         cout << "YOU WON" << endl;
         return 0;
       }
+    } else if (choice == 4) {
+      saveGame(name, badges);  // Call save function
+    } else if (choice == 5) {
+      loadGame(name, badges);  // Call load function
+      userTrainer.set_name(
+          name);  // Assuming Trainer class has a setName method
+      cout << "Trainer Name: " << name << ", Badges: " << badges
+           << endl;  // Display loaded info
+    } else if (choice == 6) {
+      break;
     } else {
-      cout << "Please Enter a Valid Choice (1, 2, or 3)";
+      cout << "Please Enter a Valid Choice (1, 2, 3, 4, 5, or 6)\n";
     }
   }
   return 0;
