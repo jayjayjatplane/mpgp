@@ -131,13 +131,13 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
       int gymLeaderMoveChoice = rand() % 2;  // 0 for move, 1 for basic attack
 
       if (gymLeaderMoveChoice == 0) {
-        // Gym Leader attacks with their Pokémon's move
+        // Pokemon's move
         cout << gymLeaderPokemon->get_species() << " used "
              << gymLeaderPokemon->get_moveset().get_move_name() << "!\n";
         int leaderMoveDamage = gymLeaderPokemon->get_moveset().get_damage();
         userPokemon->takeDamage(leaderMoveDamage);
       } else {
-        // Gym Leader uses basic attack (10 damage)
+        // Basic attack
         cout << gymLeaderPokemon->get_species() << " used Basic Attack!\n";
         userPokemon->takeDamage(10);
       }

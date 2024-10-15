@@ -40,39 +40,6 @@ void pokedexMenu(Pokedex pokedex_num) {
   }
 }
 
-// Pokemon Party menu function: guides the user through choice of pokemon teams
-void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
-  while (true) {
-    cout << "POKEMON PARTY MENU:" << endl;
-    cout << "1. Add Pokemon" << endl;
-    cout << "2. Remove Pokemon" << endl;
-    cout << "3. View Party" << endl;  // New option to view party
-    cout << "4. Go Back" << endl;
-    cout << "\nEnter your choice: ";
-    int party_menu_choice;
-    cin >> party_menu_choice;
-
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-            "\n\n\n\n\n"
-         << endl;
-
-    if (party_menu_choice == 1) {
-      addPokemon(userTrainer, pokedex);
-      cout << "\n";
-    } else if (party_menu_choice == 2) {
-      removePokemon(userTrainer);
-      cout << "\n";
-    } else if (party_menu_choice == 3) {
-      userTrainer.display_party();  // Call to display party
-      cout << "\n";
-    } else if (party_menu_choice == 4) {
-      break;
-    } else {
-      cout << "Please enter a valid choice.\n" << endl;
-    }
-  }
-}
-
 // function that allows trainer to add pokemon from the pokedex by number
 void addPokemon(Trainer& userTrainer, Pokedex& pokedex) {
   // Display the list of Pokémon the player can choose from
@@ -120,42 +87,32 @@ void removePokemon(Trainer& userTrainer) {
   }
 }
 
-// Game menu function: guides the user through battle choices and gym badge
-// collection
-void gameMenu(Trainer& userTrainer, int& badges) {
+// Pokemon Party menu function: guides the user through choice of pokemon teams
+void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
   while (true) {
-    cout << "Game Menu:" << endl;
-    cout << "1. Fight Gym 1" << endl;
-    cout << "2. Fight Gym 2" << endl;
-    cout << "3. Fight Gym 3" << endl;
-    cout << "4. Fight Champion" << endl;
-    cout << "5. Display Badges" << endl;
-    cout << "6. Go Back" << endl;
-    cout << "\n";
-    cout << "Enter your choice: " << endl;
-    int game_menu_choice;
-    cin >> game_menu_choice;
+    cout << "POKEMON PARTY MENU:" << endl;
+    cout << "1. Add Pokemon" << endl;
+    cout << "2. Remove Pokemon" << endl;
+    cout << "3. View Party" << endl;
+    cout << "4. Go Back" << endl;
+    cout << "\nEnter your choice: ";
+    int party_menu_choice;
+    cin >> party_menu_choice;
+
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
 
-    if (game_menu_choice == 1) {
-      fightGym1(userTrainer, badges);
+    if (party_menu_choice == 1) {
+      addPokemon(userTrainer, pokedex);
       cout << "\n";
-    } else if (game_menu_choice == 2) {
-      fightGym2(userTrainer, badges);
+    } else if (party_menu_choice == 2) {
+      removePokemon(userTrainer);
       cout << "\n";
-    } else if (game_menu_choice == 3) {
-      fightGym3(userTrainer, badges);
+    } else if (party_menu_choice == 3) {
+      userTrainer.display_party();
       cout << "\n";
-    } else if (game_menu_choice == 4) {
-      fightChampion(userTrainer, badges);
-      cout << "\n";
-    } else if (game_menu_choice == 5) {
-      // Display the number of badges
-      cout << "You have " << badges << " badge(s)." << endl;
-      cout << "\n";
-    } else if (game_menu_choice == 6) {
+    } else if (party_menu_choice == 4) {
       break;
     } else {
       cout << "Please enter a valid choice.\n" << endl;
@@ -248,6 +205,49 @@ void fightChampion(Trainer& userTrainer, int& badges) {
     cout << "You earned a gym badge! Total badges: " << badges << endl;
   } else {
     cout << "Try again later!" << endl;
+  }
+}
+
+// Game menu function: guides the user through battle choices and gym badge
+// collection
+void gameMenu(Trainer& userTrainer, int& badges) {
+  while (true) {
+    cout << "Game Menu:" << endl;
+    cout << "1. Fight Gym 1" << endl;
+    cout << "2. Fight Gym 2" << endl;
+    cout << "3. Fight Gym 3" << endl;
+    cout << "4. Fight Champion" << endl;
+    cout << "5. Display Badges" << endl;
+    cout << "6. Go Back" << endl;
+    cout << "\n";
+    cout << "Enter your choice: " << endl;
+    int game_menu_choice;
+    cin >> game_menu_choice;
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            "\n\n\n\n\n"
+         << endl;
+
+    if (game_menu_choice == 1) {
+      fightGym1(userTrainer, badges);
+      cout << "\n";
+    } else if (game_menu_choice == 2) {
+      fightGym2(userTrainer, badges);
+      cout << "\n";
+    } else if (game_menu_choice == 3) {
+      fightGym3(userTrainer, badges);
+      cout << "\n";
+    } else if (game_menu_choice == 4) {
+      fightChampion(userTrainer, badges);
+      cout << "\n";
+    } else if (game_menu_choice == 5) {
+      // Display the number of badges
+      cout << "You have " << badges << " badge(s)." << endl;
+      cout << "\n";
+    } else if (game_menu_choice == 6) {
+      break;
+    } else {
+      cout << "Please enter a valid choice.\n" << endl;
+    }
   }
 }
 
