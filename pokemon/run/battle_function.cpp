@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdexcept>
 #include <string>
 
 #include "Limits.h"
@@ -10,33 +9,6 @@
 #include "Trainer.h"
 
 using namespace std;
-
-// Function to check if a string is an integer
-bool isInteger(const string& input) {
-  bool is_digit = true;
-  for (char c : input) {
-    if (!isdigit(c)) {
-      is_digit = false;
-      break;
-    }
-  }
-  return is_digit;
-}
-
-// Function to check if an integer is an integer (always true)
-bool isInteger(int input) { return true; }
-
-// Template function to check if a number is an integer
-template <typename T>
-bool isInteger(T input) {
-  if (is_same<T, string>::value) {
-    return isInteger(input);
-  } else if (is_integral<T>::value) {
-    return isInteger(static_cast<int>(input));
-  } else {
-    throw invalid_argument("Input type not supported");
-  }
-}
 
 bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
   cout << "\n";
@@ -92,7 +64,7 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
     cout << "\nChoose an action:\n1. Attack\n2. Switch Pokémon\n";
     int actionChoice = getValidatedChoice();
 
-    if (isInteger(actionChoice) == 0 || actionChoice > 2 || actionChoice < 1) {
+    if (actionChoice > 2 || actionChoice < 1) {
       cout << "Invalid choice. Choose again" << endl;
       continue;
     }
@@ -108,7 +80,7 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
 
       cout << "\n";
 
-      if (isInteger(moveChoice) == 0 || moveChoice > 2 || moveChoice < 1) {
+      if (moveChoice > 2 || moveChoice < 1) {
         cout << "Invalid choice. Choose again" << endl;
         continue;
       }
@@ -155,8 +127,7 @@ bool performBattle(Trainer& userTrainer, Trainer& gymLeader) {
 
       int switchChoice = getValidatedChoice();
 
-      if (isInteger(switchChoice) == 0 || switchChoice < 1 ||
-          switchChoice > userTrainer.get_party_size()) {
+      if (switchChoice < 1 || switchChoice > userTrainer.get_party_size()) {
         cout << "Invalid choice. Choose again" << endl;
         continue;
       }
