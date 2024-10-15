@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include <string>
 
 #include "Limits.h"
@@ -28,6 +29,12 @@ void pokedexMenu(Pokedex pokedex_num) {
             "\n\n\n\n\n"
          << endl;
 
+    if (isInteger(pokedex_menu_choice) == 0 || pokedex_menu_choice > 2 ||
+        pokedex_menu_choice < 1) {
+      cout << "Invalid choice. Choose again" << endl;
+      continue;
+    }
+
     if (pokedex_menu_choice == 1) {
       pokedex_num.display_pokedex();
       cout << "\n";
@@ -50,7 +57,7 @@ void addPokemon(Trainer& userTrainer, Pokedex& pokedex) {
   int choice = getValidatedChoice();
 
   // Add the selected Pokémon to the party
-  if (choice > 0 && choice <= pokedex.getSize()) {
+  if (isInteger(choice) == 0 || choice > 0 && choice <= pokedex.getSize()) {
     if (userTrainer.get_party_size() < 3) {  // Maximum party size of 3
       userTrainer.addPokemonToParty(
           pokedex.getPokemonByIndex(choice - 1));  // Add from Pokedex
@@ -76,7 +83,7 @@ void removePokemon(Trainer& userTrainer) {
   int choice = getValidatedChoice();
 
   // Remove the selected Pokémon
-  if (choice > 0 && choice <= partySize) {
+  if (isInteger(choice) == 0 || choice > 0 && choice <= partySize) {
     cout << currentParty[choice - 1].get_species()
          << " removed from your party!" << endl;
     userTrainer.removePokemonFromParty(currentParty[choice - 1]);
@@ -94,12 +101,22 @@ void partyMenu(Trainer& userTrainer, Pokedex& pokedex) {
     cout << "3. View Party" << endl;
     cout << "4. Go Back" << endl;
     cout << "\nEnter your choice: ";
+<<<<<<< HEAD
     int party_menu_choice = getValidatedChoice();
 
+=======
+    int party_menu_choice;
+    cin >> party_menu_choice;
+>>>>>>> 79839ff (saves)
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
 
+    if (isInteger(party_menu_choice) == 0 || party_menu_choice > 4 ||
+        party_menu_choice < 1) {
+      cout << "Invalid choice. Choose again" << endl;
+      continue;
+    }
     if (party_menu_choice == 1) {
       addPokemon(userTrainer, pokedex);
       cout << "\n";
@@ -245,6 +262,11 @@ int gameMenu(Trainer& userTrainer, int& badges) {
             "\n\n\n\n\n"
          << endl;
 
+    if (isInteger(game_menu_choice) == 0 || game_menu_choice > 6 ||
+        game_menu_choice < 1) {
+      cout << "Invalid choice. Choose again" << endl;
+      continue;
+    }
     if (game_menu_choice == 1) {
       fightGym1(userTrainer, badges);
       cout << "\n";
@@ -271,8 +293,6 @@ int gameMenu(Trainer& userTrainer, int& badges) {
       cout << "\n";
     } else if (game_menu_choice == 6) {
       break;
-    } else {
-      cout << "Please enter a valid choice.\n" << endl;
     }
   }
   return win_game;
@@ -325,6 +345,10 @@ int main() {
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
             "\n\n\n\n\n"
          << endl;
+    if (isInteger(choice) == 0 || choice > 3 || choice < 1) {
+      cout << "Invalid choice. Choose again" << endl;
+      continue;
+    }
     if (choice == 1) {
       pokedexMenu(pokedex_thirty);
     } else if (choice == 2) {
