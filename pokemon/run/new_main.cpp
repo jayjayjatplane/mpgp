@@ -250,7 +250,6 @@ int main() {
 
   Trainer userTrainer(name);
 
-  int choice_counter = 0;
   while (true) {
     cout << "Main Menu:" << endl;
     cout << "1. Pokedex" << endl;
@@ -271,11 +270,6 @@ int main() {
       gameMenu(userTrainer);
     } else {
       cout << "Please Enter a Valid Choice (1 or 2)";
-      choice_counter++;
-      if (choice_counter >= 5) {
-        cout << "Ran Out of Tries. Please Restart." << endl;
-        return 0;
-      }
     }
   }
   return 0;
