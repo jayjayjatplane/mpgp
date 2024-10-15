@@ -24,7 +24,7 @@ class Trainer {
   int get_party_size();
 
   // Setters
-  void set_name(string name);
+  void set_name(string& name);
 
   // Other functions
   void addPokemonToParty(Pokemon pokemon);
@@ -34,4 +34,4 @@ class Trainer {
   ~Trainer();
 };
 
-#endif  // TRAINER_H
+#endif
