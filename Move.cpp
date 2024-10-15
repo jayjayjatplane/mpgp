@@ -15,6 +15,7 @@ Move::Move(string name, string type, int damage)
     : move_name(name), move_type(type), move_damage(damage) {}
 
 // functions
+void Move::execute() {}
 
 // getters and setters
 string Move::get_move_name() { return move_name; }

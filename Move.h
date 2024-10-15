@@ -13,13 +13,13 @@ class Move {
   int move_damage;
 
  public:
-  // constructor
+  // Constructor
   Move();
   Move(string name, string type, int damage);
 
-  // functions
+  virtual void execute();
 
-  // getters and setters
+  // Getters and setters
   string get_move_name();
   void set_move_name(string name);
   string get_move_type();
