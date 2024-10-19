@@ -54,7 +54,7 @@ void loadGame(string& trainerName, int& badgeCount) {
  * Return to the previous menu.
  * It continues to prompt the user for input until a valid choice is made.
  */
-void pokedexMenu(Pokedex pokedex_num) {
+void pokedexMenu(Pokedex& pokedex) {
   // Display the Pokedex menu
   cout << "\n";
   while (true) {
@@ -75,7 +75,7 @@ void pokedexMenu(Pokedex pokedex_num) {
     // Handle user input
     if (pokedex_menu_choice == 1) {
       // Display the Pokedex
-      pokedex_num.display_pokedex();
+      pokedex.display_pokedex();
       cout << "\n";
     } else if (pokedex_menu_choice == 2) {
       // Return to the previous menu
