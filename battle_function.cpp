@@ -1,3 +1,5 @@
+#include "battle_function.h"
+
 #include <iostream>
 #include <string>
 

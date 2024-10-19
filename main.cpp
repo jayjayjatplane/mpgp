@@ -8,6 +8,8 @@
 #include "Pokemon.h"
 #include "PokemonParty.h"
 #include "Trainer.h"
+#include "battle_function.h"
+#include "pokemon_storage.h"
 
 // Function declarations for external functions
 extern bool performBattle(Trainer& userTrainer, Trainer& gymLeader);

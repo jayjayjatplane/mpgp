@@ -1,3 +1,5 @@
+#include "pokemon_storage.h"
+
 #include <iostream>
 
 #include "Move.h"
