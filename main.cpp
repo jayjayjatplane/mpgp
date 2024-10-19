@@ -319,7 +319,7 @@ void fightGym3(Trainer& userTrainer, int& badges) {
  * Display results
  *
  */
-int fightChampion(Trainer& userTrainer, int& badges) {
+int fightChampion(Trainer& userTrainer) {
   // Create the Champion and their Pokemon
   Trainer champion("Champion");
   Move HeavySlam("Heavy Slam", "Steel", 30);
@@ -362,7 +362,6 @@ int fightChampion(Trainer& userTrainer, int& badges) {
  */
 int gameMenu(Trainer& userTrainer, int& badges) {
   int win_game = -1;
-  int win_gym = -1;
   while (true) {
     // Display the game menu
     cout << "Game Menu:" << endl;
@@ -393,7 +392,7 @@ int gameMenu(Trainer& userTrainer, int& badges) {
         cout << "You do not have enough badges to fight the champion \n"
              << endl;
       } else {
-        if (fightChampion(userTrainer, badges) == 1) {
+        if (fightChampion(userTrainer) == 1) {
           win_game = 1;
           break;
         }
@@ -467,6 +466,7 @@ int main() {
     cout << "3. Game" << endl;
     cout << "4. Save Game" << endl;
     cout << "5. Load Game" << endl;
+    cout << "6. Quit" << endl;
 
     cout << "\n";
 
@@ -495,8 +495,11 @@ int main() {
           name);  // Assuming Trainer class has a setName method
       cout << "Trainer Name: " << name << ", Badges: " << badges
            << endl;  // Display loaded info
+    } else if (choice == 6) {
+      cout << "Goodbye" << endl;
+      break;
     } else {
-      cout << "Please Enter a Valid Choice (1, 2, 3, 4, or 5)\n";
+      cout << "Please Enter a Valid Choice (1, 2, 3, 4, 5, or 6)\n";
     }
   }
   return 0;
