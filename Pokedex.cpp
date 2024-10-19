@@ -10,7 +10,9 @@ Pokedex::Pokedex() {
 }
 
 Pokedex::Pokedex(int capacity)
-    : PokemonParty(capacity), pokedex_capacity(capacity) {}
+    : PokemonParty(capacity), pokedex_capacity(capacity) {
+  pokedex_array = new Pokemon[capacity];
+}
 
 void Pokedex::display_pokedex() {
   if (party_array == nullptr) {
@@ -51,4 +53,4 @@ int Pokedex::getSize() { return getPartySize(); }
 
 Pokemon Pokedex::getPokemonByIndex(int index) { return getPokemonAt(index); }
 
-Pokedex::~Pokedex() {}
+Pokedex::~Pokedex() { delete[] pokedex_array; }
