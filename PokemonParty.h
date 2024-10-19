@@ -26,6 +26,11 @@ class PokemonParty {
   void add_pokemon();
   void display_pokemon_list();
 
+  // get and set
+  Pokemon getPokemonAt(int index);
+  Pokemon* getParty();
+  int getPartySize();
+
   // Destructors
   ~PokemonParty();
 };

@@ -16,6 +16,10 @@ class Pokedex : public PokemonParty {
   void display_pokedex();
   void add_pokemon_to_pokedex(Pokemon pokemon);
   void rem_pokemon_from_pokedex(Pokemon pokemon);
+
+  int getSize();
+  Pokemon getPokemonByIndex(int index);
+
   ~Pokedex();
 };
 

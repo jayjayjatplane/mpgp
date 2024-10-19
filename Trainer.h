@@ -24,14 +24,14 @@ class Trainer {
   int get_party_size();
 
   // Setters
-  void set_name(string name);
+  void set_name(string& name);
 
   // Other functions
   void addPokemonToParty(Pokemon pokemon);
   void removePokemonFromParty(Pokemon pokemon);
-
+  void display_party();
   // Destructor
   ~Trainer();
 };
 
-#endif  // TRAINER_H
+#endif

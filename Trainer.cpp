@@ -18,7 +18,7 @@ string Trainer::get_name() { return name; }
 
 Pokemon* Trainer::get_party() { return party; }
 
-void Trainer::set_name(string new_name) { name = new_name; }
+void Trainer::set_name(string& trainerName) { name = trainerName; }
 
 int Trainer::get_party_size() { return party_size; }
 
@@ -47,6 +47,17 @@ void Trainer::removePokemonFromParty(Pokemon pokemon) {
     }
   }
   cout << "Pokemon not found in party!" << endl;
+}
+
+void Trainer::display_party() {
+  cout << "Pokemon Party:" << endl;
+  for (int i = 0; i < party_size; i++) {
+    cout << "Pokemon " << i + 1 << ":" << endl;
+    cout << " Species: " << party[i].get_species() << " | ";
+    cout << " Type: " << party[i].get_type() << " | ";
+    cout << " Health: " << party[i].get_health() << " | ";
+    cout << "\n";
+  }
 }
 
 Trainer::~Trainer() { delete[] party; }

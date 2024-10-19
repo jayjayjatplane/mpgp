@@ -10,13 +10,14 @@ using namespace std;
 
 // VCGSFD
 
-class Pokemon {
+class Pokemon : public Move {
  private:
   // Variables
   string species;
   string type;
   int health;
   Move moveset;
+  int origin_health;
 
  public:
   // Constructors
@@ -39,6 +40,7 @@ class Pokemon {
   // Functions
   void attack(Pokemon& target);
   void takeDamage(int damage);
+  int heal();
 
   // Destructors
 };

@@ -21,6 +21,7 @@ Pokemon::Pokemon(string new_string, string new_type, int new_health,
   type = new_type;
   health = new_health;
   moveset = new_moveset;
+  origin_health = new_health;
 }
 
 // functions
@@ -40,6 +41,11 @@ void Pokemon::takeDamage(int damage) {
   } else {
     cout << species << " now has " << health << " health remaining." << endl;
   }
+}
+
+int Pokemon::heal() {
+  health = origin_health;
+  return health;
 }
 
 // Getters
